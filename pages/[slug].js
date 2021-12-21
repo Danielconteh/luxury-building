@@ -17,7 +17,7 @@ import Buy from '../UI/Detail/checkOut'
 import Footer from '../UI/footer'
 import Map from '../UI/Detail/map'
 import { useSession } from 'next-auth/client'
-import WriteReviews from '../UI/Detail/WriteReview'
+import WriteReviews from '../UI/Detail/writeReview';
 import Reviews from '../UI/Detail/reviews'
 import { Layout } from '../UI/Layout';
 // --------------END OF COMPONENT ❤ ------------------
