@@ -1,0 +1,13 @@
+.map_container {
+  grid-column: full-start / full-end;
+  grid-row: 5/6;
+  text-align: center;
+
+  &_header{
+    font-size: 3rem;
+    text-transform: capitalize;
+    letter-spacing: .165rem;
+    margin: 2rem 0rem;
+     color:#555;
+  }
+}

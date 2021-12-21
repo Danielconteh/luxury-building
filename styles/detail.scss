@@ -1,0 +1,17 @@
+
+.grid_container_detail{
+  grid-template-columns:
+    [full-start]1fr [center-start] repeat(
+      7,
+      [col-start]minmax(min-content, 18rem) [col-end]
+    )
+    [center-end] 1fr [full-end];
+
+ grid-template-rows: min-content 75vh repeat(3, min-content) min-content min-content;
+
+    @media screen and (max-width: 31.5em) {
+      //350px
+ grid-template-rows: min-content 55vh repeat(3, min-content) min-content min-content;
+
+    }
+} 

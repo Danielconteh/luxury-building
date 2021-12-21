@@ -1,0 +1,47 @@
+@import 'variable';
+
+//===================
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 10PX */
+  @media screen and (max-width: 31.25em) {
+    font-size: 55%; //500px
+  }
+  // @media screen and (max-width: 24.0625em) {
+  //   font-size: 55%; //385px
+  // }
+  @media screen and (max-width: 21.875em) {
+    font-size: 50%; //350px
+  }
+  @media screen and (max-width: 18.75em) {
+    font-size: 45%; //300px
+  }
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: $textColor;
+  position: relative;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+
+// ==============LEAFTLET======================
+
+.leaflet-container {
+  width: 100vw;
+  height: 50vh;
+}
+
+
+

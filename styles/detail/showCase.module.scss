@@ -1,0 +1,44 @@
+@import '../variable.scss';
+.images_contaner {
+  grid-column: full-start / full-end;
+  grid-row: 4/5;
+  background-color: $textColor;
+  padding: 1rem;
+
+  &__header {
+    text-align: center;
+   color:#555;
+    font-size: 3rem;
+    text-transform: capitalize;
+    letter-spacing: .165rem;
+    margin: 2rem 0rem;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+    gap: 3rem;
+
+    @media screen and (max-width: 40.625em) {
+      //650px
+      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+      gap: 2rem;
+      padding: 0rem 1rem;
+    }
+  }
+}
+.image__design {
+  cursor: pointer;
+  height: 100%;
+  outline-offset: 0.3rem;
+  outline: 1px solid lightgray;
+  transition: all 0.2s ease-in;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  // &:hover {
+  //   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  // }
+  // &:not(:hover) {
+  //   transform: scale(0.9);
+  // }
+}

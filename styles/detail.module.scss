@@ -1,0 +1,34 @@
+// $mainBgColor: #282c34;
+// $btnColor: orangered;
+// $textColor: #f1f1f1;
+@import 'variable';
+
+//====================
+.grid_container {
+  display: grid;
+  grid-template-rows: min-content 75vh repeat(5, min-content);
+  grid-template-columns:
+    [full-start]1fr [center-start] repeat(
+      7,
+      [col-start]minmax(min-content, 18rem) [col-end]
+    )
+    [center-end] 1fr [full-end];
+
+  //   @media screen and (max-width: 59.375em) {
+  //     //950px
+  //     grid-template-rows: min-content 60vh repeat(6, min-content);
+  //   }
+
+  //   @media screen and (max-width: 40.625em) {
+  //     //650px
+  //     grid-template-rows: min-content 50vh repeat(6, min-content);
+  //   }
+  //   @media screen and (max-width: 28.125em) {
+  //     //450px
+  //     grid-template-rows: min-content 45vh repeat(6, min-content);
+  //   }
+  //   @media screen and (max-width: 21.875em) {
+  //     //350px
+  //     grid-template-rows: min-content 40vh repeat(6, min-content);
+  //   }
+}

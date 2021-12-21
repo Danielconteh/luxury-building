@@ -1,0 +1,13 @@
+.gallary_container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 5vw);
+  grid-gap: 1.5rem;
+  padding: 2rem;
+  @media screen and (max-width: 40.625em) {
+    //650px
+    padding: 1rem;
+    grid-gap: 1rem;
+  }
+}
+

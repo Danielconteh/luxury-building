@@ -1,0 +1,1266 @@
+[{
+  "_id": {
+    "$oid": "612a0bb674f1a82d902b789e"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      149.534607,
+      -22.118896
+    ],
+    "place name": "Clairview, QLD"
+  },
+  "rooms shape": "Rectangle",
+  "store": 2,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 4,
+  "Kitchen": 1,
+  "Garden shade": "avaliable",
+  "Attic/loft": "not-available",
+  "study room": 1,
+  "swimming pool": "aviliable",
+  "Year built": 1996,
+  "Furniture": [
+    "Carpet",
+    "Bookshelf",
+    "Bookcase",
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "tea table",
+    "Floor lamp",
+    "Curtains",
+    "TV"
+  ],
+  "images": [
+    "house_Images_Garden Flate Villa-img .jpeg_03-house-image.jpeg",
+    "house_Images_Garden Flate Villa-img .jpeg_01-house-image.jpeg",
+    "house_Images_Garden Flate Villa-img .jpg_02-house-image.jpeg",
+    "house_Images_Garden Flate Villa-img .jpg_05-house-image.jpeg",
+    "house_Images_Garden Flate Villa-img .jpg_04-house-image.jpeg",
+    "house_Images_Garden Flate Villa-img .jpg_07-house-image.jpeg",
+    "house_Images_Garden Flate Villa-img .jpg_06-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "garden flate villa",
+  "country": "Australia",
+  "price": "65000",
+  "image": "house-Image-01.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0bb674f1a82d902b789f"
+      },
+      "name": "jane scoot",
+      "img": "./test"
+    }
+  ],
+  "rooms": 6,
+  "Garage": 1, 
+  "decoration": "modern",
+  "meter": 320,
+  "__v": 0,
+  "slug": "garden-flate-villa"
+},{
+  "_id": {
+    "$oid": "612a0bd774f1a82d902b78a4"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      14.783333,
+      41.133331
+    ],
+    "place name": "Benevento, Campania"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 2,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 0,
+  "swimming pool": "not-aviliable",
+  "Year built": 1999,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_Top Wooden House-img .jpg_01-house-image.jpeg",
+    "house_Images_Top Wooden House-img .jpg_02-house-image.jpeg",
+    "house_Images_Top Wooden House-img .jpg_04-house-image.jpeg",
+    "house_Images_Top Wooden House-img .jpg_07-house-image.jpeg",
+    "house_Images_Top Wooden House-img .jpg_05-house-image.jpeg",
+    "house_Images_Top Wooden House-img .jpg_03-house-image.jpeg",
+    "house_Images_Top Wooden House-img .jpg_06-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "top wooden house",
+  "country": "Italy",
+  "price": "7000",
+  "image": "house-Image-02.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0bd774f1a82d902b78a5"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 3,
+  "Garage": 1,
+  "decoration": "modern",
+  "meter": 90,
+  "__v": 0,
+  "slug": "top-wooden-house"
+},{
+  "_id": {
+    "$oid": "612a0bf674f1a82d902b78a7"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -58.381592,
+      -34.603722
+    ],
+    "place name": "Buenos Aires"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 2,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 0,
+  "swimming pool": "not-aviliable",
+  "Year built": 1999,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_down town country house-img .jpg_03-house-image.jpeg",
+    "house_Images_down town country house-img .jpg_01-house-image.jpeg",
+    "house_Images_down town country house-img .jpg_04-house-image.jpeg",
+    "house_Images_down town country house-img .jpg_06-house-image.jpeg",
+    "house_Images_down town country house-img .jpg_05-house-image.jpeg",
+    "house_Images_down town country house-img .jpg_07-house-image.jpeg",
+    "house_Images_down town country house-img .jpg_02-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "down town country house",
+  "country": "Argentina",
+  "price": "2500",
+  "image": "house-Image-03.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0bf674f1a82d902b78a8"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 2,
+  "Garage": 0,
+  "decoration": "modern",
+  "meter": 140,
+  "__v": 0,
+  "slug": "down-town-country-house"
+},{
+  "_id": {
+    "$oid": "612a0c9974f1a82d902b78af"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -8.712447,
+      42.231358
+    ],
+    "place name": "Vigo, Galicia"
+  },
+  "rooms shape": "Rectangle",
+  "store": 4,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 8,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 2,
+  "swimming pool": "aviliable",
+  "Year built": 2005,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_las sagrada mansion-img .jpeg_01-house-image.jpeg",
+    "house_Images_las sagrada mansion-img .jpg_03-house-image.jpeg",
+    "house_Images_las sagrada mansion-img .jpg_02-house-image.jpeg",
+    "house_Images_las sagrada mansion-img .jpg_04-house-image.jpeg",
+    "house_Images_las sagrada mansion-img .jpg_06-house-image.jpeg",
+    "house_Images_las sagrada mansion-img .jpg_07-house-image.jpeg",
+    "house_Images_las sagrada mansion-img .jpg_05-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "las sagrada mansion",
+  "country": "spain",
+  "price": "120000",
+  "image": "house-Image-04.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0c9974f1a82d902b78b0"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 10,
+  "Garage": 3,
+  "decoration": "western-style",
+  "meter": 350,
+  "__v": 0,
+  "slug": "las-sagrada-mansion"
+},{
+  "_id": {
+    "$oid": "612a0cc874f1a82d902b78b5"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      14.3,
+      40.900002
+    ],
+    "place name": "Casoria, Campania, "
+  },
+  "rooms shape": "Rectangle",
+  "store": 5,
+  "Living room": 1,
+  "dinning room": 5,
+  "Bathroom": 25,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 4,
+  "swimming pool": "not-aviliable",
+  "Year built": 1998,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_Royal estate building-img .jpg_03-house-image.jpeg",
+    "house_Images_Royal estate building-img .jpg_02-house-image.jpeg",
+    "house_Images_Royal estate building-img .jpg_01-house-image.jpeg",
+    "house_Images_Royal estate building-img .jpg_07-house-image.jpeg",
+    "house_Images_Royal estate building-img .jpg_04-house-image.jpeg",
+    "house_Images_Royal estate building-img .jpg_05-house-image.jpeg",
+    "house_Images_Royal estate building-img .jpg_06-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "Royal estate building",
+  "country": "Italy",
+  "price": "290000",
+  "image": "house-Image-05.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0cc874f1a82d902b78b6"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 22,
+  "Garage": 5,
+  "decoration": "modern",
+  "meter": 415,
+  "__v": 0,
+  "slug": "royal-estate-building"
+},{
+  "_id": {
+    "$oid": "612a0cdd74f1a82d902b78b8"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -7.863333,
+      42.336388
+    ],
+    "place name": "Ourense, Galicia, "
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 7,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "available",
+  "study room": 2,
+  "swimming pool": "aviliable",
+  "Year built": 2007,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_glass view building-img .jpeg_01-house-image.jpeg",
+    "house_Images_glass view building-img .jpg_02-house-image.jpeg",
+    "house_Images_glass view building-img .jpg_03-house-image.jpeg",
+    "house_Images_glass view building-img .jpg_05-house-image.jpeg",
+    "house_Images_glass view building-img .jpg_07-house-image.jpeg",
+    "house_Images_glass view building-img .jpg_06-house-image.jpeg",
+    "house_Images_glass view building-img .jpg_04-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "glass view building",
+  "country": "Spain",
+  "price": "99000",
+  "image": "house-Image-06.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0cdd74f1a82d902b78b9"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 12,
+  "Garage": 4,
+  "decoration": "modern",
+  "meter": 130,
+  "__v": 0,
+  "slug": "glass-view-building"
+},{
+  "_id": {
+    "$oid": "612a0cf474f1a82d902b78be"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      103.893059,
+      1.371778
+    ],
+    "place name": "Hougang"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 4,
+  "Kitchen": 1,
+  "Garden shade": "avaliable",
+  "Attic/loft": "available",
+  "study room": 0,
+  "swimming pool": "aviliable",
+  "Year built": 2001,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_wasylla building-img .jpeg_01-house-image.jpeg",
+    "house_Images_wasylla building-img .jpg_03-house-image.jpeg",
+    "house_Images_wasylla building-img .jpg_02-house-image.jpeg",
+    "house_Images_wasylla building-img .jpg_04-house-image.jpeg",
+    "house_Images_wasylla building-img .jpg_06-house-image.jpeg",
+    "house_Images_wasylla building-img .jpg_05-house-image.jpeg",
+    "house_Images_wasylla building-img .jpg_07-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "wasylla building",
+  "country": "Singapore",
+  "price": "87000",
+  "image": "house-Image-07.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0cf474f1a82d902b78bf"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 5,
+  "Garage": 1,
+  "decoration": "modern",
+  "meter": 93,
+  "__v": 0,
+  "slug": "wasylla-building"
+},{
+  "_id": {
+    "$oid": "612a0d0d74f1a82d902b78c1"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      14.0625,
+      37.490276
+    ],
+    "place name": "Caltanissetta, Sicily, "
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 3,
+  "Kitchen": 1,
+  "Garden shade": "avaliable",
+  "Attic/loft": "not-available",
+  "study room": 0,
+  "swimming pool": "aviliable",
+  "Year built": 1999,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_dollar house .jpg_03-house-image.jpeg",
+    "house_Images_dollar house .jpg_02-house-image.jpeg",
+    "house_Images_dollar house .jpg_04-house-image.jpeg",
+    "house_Images_dollar house .jpg_01-house-image.jpeg",
+    "house_Images_dollar house .jpg_05-house-image.jpeg",
+    "house_Images_dollar house .jpg_06-house-image.jpeg",
+    "house_Images_dollar house .jpg_07-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "dollar house",
+  "country": "Italy",
+  "price": "103000",
+  "image": "house-Image-08.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0d0d74f1a82d902b78c2"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 4,
+  "Garage": 1,
+  "decoration": "modern",
+  "meter": 411,
+  "__v": 0,
+  "slug": "dollar-house"
+},{
+  "_id": {
+    "$oid": "612a0d2774f1a82d902b78c4"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      11.616667,
+      52.133331
+    ],
+    "place name": "Magdeburg, Saxony-Anhalt"
+  },
+  "rooms shape": "Rectangle",
+  "store": 2,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 2,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 1,
+  "swimming pool": "aviliable",
+  "Year built": 1992,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_amazing shore house-img .jpg_03-house-image.jpeg",
+    "house_Images_amazing shore house-img .jpg_01-house-image.jpeg",
+    "house_Images_amazing shore house-img .jpg_04-house-image.jpeg",
+    "house_Images_amazing shore house-img .jpg_02-house-image.jpeg",
+    "house_Images_amazing shore house-img .jpg_05-house-image.jpeg",
+    "house_Images_amazing shore house-img 8.jpg_07-house-image.jpeg",
+    "house_Images_amazing shore house-img .jpg_06-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "amazing shore house",
+  "country": "Germany",
+  "price": "97000",
+  "image": "house-Image-10.jpeg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0d2774f1a82d902b78c5"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 4,
+  "Garage": 1,
+  "decoration": "traditional",
+  "meter": 123,
+  "__v": 0,
+  "slug": "amazing-shore-house"
+},{
+  "_id": {
+    "$oid": "612a0d3b74f1a82d902b78ca"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -65.302177,
+      -24.18434
+    ],
+    "place name": "Jujuy, Jujuy Province"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 3,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 0,
+  "swimming pool": "not-aviliable",
+  "Year built": 2002,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_real garden villa-img .jpg_03-house-image.jpeg",
+    "house_Images_real garden villa-img .jpg_02-house-image.jpeg",
+    "house_Images_real garden villa-img .jpg_04-house-image.jpeg",
+    "house_Images_real garden villa-img .jpg_06-house-image.jpeg",
+    "house_Images_real garden villa-img .jpg_01-house-image.jpeg",
+    "house_Images_real garden villa-img .jpg_05-house-image.jpeg",
+    "house_Images_real garden villa-img .jpg_07-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "real garden villa",
+  "country": "Argentina",
+  "price": "125000",
+  "image": "house-Image-11.jpeg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0d3b74f1a82d902b78cb"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 5,
+  "Garage": 2,
+  "decoration": "modern",
+  "meter": 290,
+  "__v": 0,
+  "slug": "real-garden-villa"
+},{
+  "_id": {
+    "$oid": "612a0d4d74f1a82d902b78cd"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -2.22,
+      52.192001
+    ],
+    "place name": "Worcester, Worcestershire"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 4,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 1,
+  "swimming pool": "not-aviliable",
+  "Year built": 2003,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_dynamic family house-img .jpg_01-house-image.jpeg",
+    "house_Images_dynamic family house-img .jpg_04-house-image.jpeg",
+    "house_Images_dynamic family house-img .jpg_02-house-image.jpeg",
+    "house_Images_dynamic family house-img .jpg_05-house-image.jpeg",
+    "house_Images_dynamic family house-img .jpg_07-house-image.jpeg",
+    "house_Images_dynamic family house-img .jpg_03-house-image.jpeg",
+    "house_Images_dynamic family house-img .jpg_06-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "dynamic family house",
+  "country": "UK",
+  "price": "15000",
+  "image": "house-Image-12.jpeg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0d4d74f1a82d902b78ce"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 6,
+  "Garage": 1,
+  "decoration": "modern",
+  "meter": 350,
+  "__v": 0,
+  "slug": "dynamic-family-house"
+},{
+  "_id": {
+    "$oid": "612a0d6574f1a82d902b78d0"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -90.590836,
+      41.543056
+    ],
+    "place name": "Davenport, IA"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 3,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 1,
+  "swimming pool": "not-aviliable",
+  "Year built": 1998,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_korama building-img .jpg_03-house-image.jpeg",
+    "house_Images_korama building-img .jpg_04-house-image.jpeg",
+    "house_Images_korama building-img .jpg_06-house-image.jpeg",
+    "house_Images_korama building-img .jpg_01-house-image.jpeg",
+    "house_Images_korama building-img .jpg_02-house-image.jpeg",
+    "house_Images_korama building-img .jpg_05-house-image.jpeg",
+    "house_Images_korama building-img .jpg_07-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "korama building",
+  "country": "USA",
+  "price": "85000",
+  "image": "house-Image-13.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0d6574f1a82d902b78d1"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 5,
+  "Garage": 1,
+  "decoration": "modern",
+  "meter": 140,
+  "__v": 0,
+  "slug": "koroma-building"
+},{
+  "_id": {
+    "$oid": "612a0d7974f1a82d902b78d6"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -9.401894,
+      38.710159
+    ],
+    "place name": "Estori"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 3,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 1,
+  "swimming pool": "not-aviliable",
+  "Year built": 2005,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_queen's villa-img .webp_02-house-image.jpeg",
+    "house_Images_queen's villa-img .jpg_03-house-image.jpeg",
+    "house_Images_queen's villa-img .jpg_01-house-image.jpeg",
+    "house_Images_queen's villa-img .jpg_05-house-image.jpeg",
+    "house_Images_queen's villa-img .jpg_06-house-image.jpeg",
+    "house_Images_queen's villa-img .jpg_04-house-image.jpeg",
+    "house_Images_queen's villa-img .jpg_07-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "queen's villa",
+  "country": "Portugal",
+  "price": "$70000",
+  "image": "house-Image-14.jpeg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0d7974f1a82d902b78d7"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 5,
+  "Garage": 1,
+  "decoration": "modern",
+  "meter": 480,
+  "__v": 0,
+  "slug": "queen's-villa"
+},{
+  "_id": {
+    "$oid": "612a0d9074f1a82d902b78dc"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      33.022617,
+      34.70713
+    ],
+    "place name": "Limassol"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 4,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 1,
+  "swimming pool": "aviliable",
+  "Year built": 2000,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_salone villa-img .jpg_04-house-image.jpeg",
+    "house_Images_salone villa-img .jpg_03-house-image.jpeg",
+    "house_Images_salone villa-img .jpg_01-house-image.jpeg",
+    "house_Images_salone villa-img .jpg_07-house-image.jpeg",
+    "house_Images_salone villa-img .jpg_06-house-image.jpeg",
+    "house_Images_salone villa-img .jpg_05-house-image.jpeg",
+    "house_Images_salone villa-img .jpg_02-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "salone villa",
+  "country": "Cyprus",
+  "price": "$170000",
+  "image": "house-Image-15.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0d9074f1a82d902b78dd"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 5,
+  "Garage": 2,
+  "decoration": "modern",
+  "meter": 230,
+  "__v": 0,
+  "slug": "salone-villa"
+},{
+  "_id": {
+    "$oid": "612a0da574f1a82d902b78df"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      143.550003,
+      -35.333332
+    ],
+    "place name": "Swan Hill, VIC, Australia"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 2,
+  "Kitchen": 1,
+  "Garden shade": "avaliable",
+  "Attic/loft": "not-available",
+  "study room": 0,
+  "swimming pool": "not-aviliable",
+  "Year built": 2000,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_green field house-img .webp_02-house-image.jpeg",
+    "house_Images_green field house-img .jpg_03-house-image.jpeg",
+    "house_Images_green field house-img .jpg_04-house-image.jpeg",
+    "house_Images_green field house-img .jpg_01-house-image.jpeg",
+    "house_Images_green field house-img .jpg_05-house-image.jpeg",
+    "house_Images_green field house-img .jpg_07-house-image.jpeg",
+    "house_Images_green field house-img .jpg_06-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "green field house",
+  "country": "Australia",
+  "price": "152000",
+  "image": "house-Image-16.jpeg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0da574f1a82d902b78e0"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 4,
+  "Garage": 1,
+  "decoration": "modern",
+  "meter": 365,
+  "__v": 0,
+  "slug": "green-field-house"
+},{
+  "_id": {
+    "$oid": "612a0db874f1a82d902b78e2"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -88.015831,
+      44.513332
+    ],
+    "place name": "Green Bay, WI, the "
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 2,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "available",
+  "study room": 1,
+  "swimming pool": "aviliable",
+  "Year built": 1999,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_yapo building-img .jpeg_03-house-image.jpeg",
+    "house_Images_yapo building-img .jpeg_01-house-image.jpeg",
+    "house_Images_yapo building-img .jpg_05-house-image.jpeg",
+    "house_Images_yapo building-img .jpg_06-house-image.jpeg",
+    "house_Images_yapo building-img .jpg_02-house-image.jpeg",
+    "house_Images_yapo building-img .jpg_04-house-image.jpeg",
+    "house_Images_yapo building-img .jpg_07-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "yapo building",
+  "country": "US",
+  "price": "67000",
+  "image": "house-Image-17.jpg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0db874f1a82d902b78e3"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 10,
+  "Garage": 3,
+  "decoration": "modern",
+  "meter": 410,
+  "__v": 0,
+  "slug": "yapo-building"
+},{
+  "_id": {
+    "$oid": "612a0dcc74f1a82d902b78e8"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -71.308525,
+      -41.134258
+    ]
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 4,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 2,
+  "swimming pool": "not-aviliable",
+  "Year built": 2005,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_modern glass building-img .jpg_02-house-image.jpeg",
+    "house_Images_modern glass building-img .jpg_03-house-image.jpeg",
+    "house_Images_modern glass building-img .jpg_04-house-image.jpeg",
+    "house_Images_modern glass building-img .jpg_01-house-image.jpeg",
+    "house_Images_modern glass building-img .jpg_05-house-image.jpeg",
+    "house_Images_modern glass building-img .jpg_07-house-image.jpeg",
+    "house_Images_modern glass building-img .jpg_06-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "modern glass building",
+  "country": "Argentina",
+  "price": "237000",
+  "image": "house-Image-18.jpeg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0dcc74f1a82d902b78e9"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 6,
+  "Garage": 1,
+  "decoration": "modern",
+  "meter": 215,
+  "__v": 0,
+  "slug": "modern-glass-building"
+},{
+  "_id": {
+    "$oid": "612a0df874f1a82d902b78ed"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      43.435089,
+      42.577934
+    ],
+    "place name": "Oni"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 5,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "available",
+  "study room": 2,
+  "swimming pool": "aviliable",
+  "Year built": 2006,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_beautiful tower mansion-img .jpeg_03-house-image.jpeg",
+    "house_Images_beautiful tower mansion-img .jpeg_01-house-image.jpeg",
+    "house_Images_beautiful tower mansion-img .jpg_06-house-image.jpeg",
+    "house_Images_beautiful tower mansion-img .jpg_05-house-image.jpeg",
+    "house_Images_beautiful tower mansion-img .jpg_04-house-image.jpeg",
+    "house_Images_beautiful tower mansion-img .jpg_07-house-image.jpeg",
+    "house_Images_beautiful tower mansion-img .jpg_02-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "beautiful tower mansion",
+  "country": "Georgia",
+  "price": "9000",
+  "image": "house-Image-20.jpeg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0df874f1a82d902b78ee"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 8,
+  "Garage": 3,
+  "decoration": "modern",
+  "meter": 392,
+  "__v": 0,
+  "slug": "beautiful-tower-mansion"
+},{
+  "_id": {
+    "$oid": "612a0e0e74f1a82d902b78f3"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -1.087222,
+      50.805832
+    ],
+    "place name": "Portsmouth, Hampshire"
+  },
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 3,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 1,
+  "swimming pool": "not-aviliable",
+  "Year built": 2009,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_Modern Familiy Apartment-img .jpg_02-house-image.jpeg",
+    "house_Images_Modern Familiy Apartment-img .jpg_01-house-image.jpeg",
+    "house_Images_Modern Familiy Apartment-img .jpg_04-house-image.jpeg",
+    "house_Images_Modern Familiy Apartment-img .jpg_03-house-image.jpeg",
+    "house_Images_Modern Familiy Apartment-img .jpg_05-house-image.jpeg",
+    "house_Images_Modern Familiy Apartment-img .jpg_06-house-image.jpeg",
+    "house_Images_Modern Familiy Apartment-img .jpg_07-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "Modern Familiy Apartment",
+  "country": "UK",
+  "price": "60000",
+  "image": "house-Image-21.jpeg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612a0e0e74f1a82d902b78f4"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 5,
+  "Garage": 2,
+  "decoration": "modern",
+  "meter": 280,
+  "__v": 0,
+  "slug": "modern-family-apartment"
+},{
+  "_id": {
+    "$oid": "612cbd12ff474816d46b443c"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      11.586111,
+      50.927223
+    ],
+    "place name": "Jena, Thuringia "
+  },
+  "slug": "highway-mansion",
+  "rooms shape": "Rectangle",
+  "store": 1,
+  "Living room": 1,
+  "dinning room": 1,
+  "Bathroom": 4,
+  "Kitchen": 1,
+  "Garden shade": "not-avaliable",
+  "Attic/loft": "not-available",
+  "study room": 0,
+  "swimming pool": "aviliable",
+  "Year built": 2006,
+  "Furniture": [
+    "Painting",
+    "Mirror",
+    "Sofa",
+    "Armchair",
+    "Coffee table",
+    "TV"
+  ],
+  "images": [
+    "house_Images_highway mansion-img .jpg_01-house-image.jpeg",
+    "house_Images_highway mansion-img .jpg_02-house-image.jpeg",
+    "house_Images_highway mansion-img .jpg_03-house-image.jpeg",
+    "house_Images_highway mansion-img .jpg_05-house-image.jpeg",
+    "house_Images_highway mansion-img .jpg_04-house-image.jpeg",
+    "house_Images_highway mansion-img .jpg_06-house-image.jpeg",
+    "house_Images_highway mansion-img .jpg_07-house-image.jpeg"
+  ],
+  "description": [
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi.",
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo atque rerum possimus provident reprehenderit. Id dolore ipsam repellendus, corporis, dolorem, nemo rem vel nobis illum obcaecati adipisci fugit. Sapiente, eligendi."
+  ],
+  "name": "highway mansion",
+  "country": "Germany",
+  "price": "296000",
+  "image": "house-Image-19.jpeg-banner.jpeg",
+  "realtor": [
+    {
+      "_id": {
+        "$oid": "612cbd12ff474816d46b443d"
+      },
+      "name": "David swift",
+      "img": "./test"
+    }
+  ],
+  "rooms": 8,
+  "Garage": 2,
+  "decoration": "western-style",
+  "meter": 411,
+  "__v": 0
+}]

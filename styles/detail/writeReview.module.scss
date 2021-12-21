@@ -1,0 +1,98 @@
+
+.writeReview_grid_container {
+  grid-column: center-start / center-end;
+  grid-row: 8 / 9;
+  text-align: center;
+  display: grid;
+  grid-template-columns: .5fr repeat(2,1fr) .5fr;
+
+  &_header{
+    grid-column:  2/4;
+    grid-row: 1/2;
+    padding: 1.7rem 0rem;
+    font-size: 1.85rem;
+    letter-spacing: .155rem;
+    text-transform: capitalize;
+    overflow: hidden;
+
+  }
+
+
+  form{
+    grid-column:  1/-1;
+    grid-row: 2/3;
+    margin: 0 auto;
+
+
+    textarea{
+      resize: none;
+      margin-bottom: 2rem;
+      background:none;
+      border: 1px solid #222;
+      border-radius: 1rem;
+      font-size: 1.9rem;
+      padding: 1rem;
+      width: 90%;
+       @media screen and (max-width:31.25em) { //500px
+        width: 95%;
+      }
+      height: 25rem;
+
+      &:focus{
+        background:none;
+        border: 1px solid #222;
+      }
+    }
+
+    button{
+      display: block;
+      margin: 0 auto;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: none;
+      text-transform: capitalize;
+      letter-spacing: 0.13rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+      border: .1rem solid gray;
+      border-radius: 1.15rem;
+      appearance: none;      
+      transition: all 0.2s ease-in-out;
+
+      &:hover,&:focus{transform: translateY(-1px);}
+      &:active {transform: translateY(0px);}
+    }
+  }
+}
+
+.Not_Login{
+//  display: none;
+grid-column: 2/4;
+grid-row: 1/2;
+text-transform: capitalize;
+cursor: pointer;
+font-size: 2rem;
+   @media screen and (max-width:31.25em) { //500px
+        font-size: 1.6rem;
+padding: 2rem 1rem;
+
+      }
+letter-spacing: .125rem;
+padding: 2rem;
+display: flex;
+align-items: center;
+justify-content: center;
+
+span{
+  padding: .5rem 1rem;
+  border-radius:2.5rem;
+  border:1px solid #777;
+  margin-right: 1rem;
+  font-size: 1.7rem;
+   @media screen and (max-width:31.25em) { //500px
+         padding: 1rem 1.5rem;
+         font-size: 1.35rem;
+      }
+
+}
+}

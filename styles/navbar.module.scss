@@ -1,0 +1,393 @@
+@import 'variable';
+
+//====================
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: auto 1rem;
+  height: 7rem;
+  color: $textColor !important;
+
+  .title_link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    letter-spacing: 0.3rem;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .log {
+    @media screen and (max-width: 40.625em) {
+      //650px
+      display: none;
+    }
+  }
+  .signInForm {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border:1px solid #999;
+    border-radius: 25px;
+    &:hover {
+    border: 1.5px solid #999;
+    }
+    & button {
+      background: none;
+      appearance: none;
+      border: none;
+      vertical-align: middle;
+      font-size: 1.5rem;
+      padding: 0.5rem 2rem;
+      cursor: pointer;
+      letter-spacing: 0.2rem;
+      text-transform: capitalize;
+      color: $textColor;
+    
+    }
+  }
+}
+// modelPopUp-Mixin
+
+.modelPopUpPosition {
+  position: fixed;
+  overflow: hidden;
+  top: 0%;
+  left: 50%;
+  transition: transform 350ms ease-in-out;
+  background: $textColor;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.55);
+  z-index: 4;
+}
+// popUp
+.modelPopUp {
+  @extend .modelPopUpPosition;
+  padding: 2rem 0rem;
+
+  width: 40rem;
+  top: 50vh;
+  transform: translate(-50%, -45vh) scale(1);
+
+  @media screen and (max-width: 31.25em) {
+    //500px
+    width: 100%;
+    top: 0%;
+    right: 0;
+    left: 0;
+    bottom: 0%;
+    transform: translate(0%, -0%) scale(1);
+  }
+  opacity: 1;
+  visibility: visible;
+}
+// popOut
+.modelPopOut {
+  @extend .modelPopUpPosition;
+  top: 0%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease-out;
+}
+.closeBtn {
+  position: absolute;
+  right: 0;
+  margin-top: -3rem;
+  padding: 0.7rem;
+  padding-right: 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  display: none;
+  @media screen and (max-width: 31.25em) {
+    //500px
+    display: block;
+  }
+
+  span {
+    font-size: 2rem;
+    padding: 0.7rem;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      transform: translateY(-2px);
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
+// overlayer
+
+.overlayer {
+  @media screen and (min-width: 31.25em) {
+    // [min width should be greater than 500px (not less)]500px
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 2;
+  }
+}
+
+// popUp pages
+.tab {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 2rem 1rem;
+  cursor: pointer;
+  color: #555;
+  &_active {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      background: $btnColor;
+      bottom: -1rem;
+      left: 0;
+      width: 100%;
+      transition: all 150ms ease-in;
+    }
+  }
+}
+
+// form lable
+
+.signUpForm {
+  display: flex;
+  transition: transform 200ms ease-out;
+  transform: translateX(0);
+  grid-column: 2 / 6;
+  grid-row: 1;
+
+  &_remove {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-10%);
+    transition: transform 200ms ease-out;
+  }
+
+  &_signUp {
+    padding: 1.5rem 0.5rem;
+    width: 100%;
+  }
+}
+
+.form_wrapper {
+  display: grid;
+  grid-template-columns: 1fr repeat(4, 7rem) 1fr;
+  @media screen and (max-width: 31.25em) {
+    //500px
+    grid-template-columns: 0.5fr repeat(4, 8.7rem) 0.5fr;
+  }
+}
+
+.login_form {
+  grid-column: 2 / 6;
+  grid-row: 1;
+  transform: translateX(-2.5%);
+  @media screen and (max-width: 31.25em) {
+    transform: translateX(0%); //500px
+  }
+  transition: transform 200ms ease-out;
+  &_login {
+    padding: 1.5rem 0.5rem;
+    width: 100%;
+  }
+  &_remove {
+    visibility: hidden;
+    opacity: 0;
+    grid-column: 2 / 6;
+    grid-row: 1;
+    transform: translateX(10%);
+    transition: transform 200ms ease-out;
+  }
+  .resetMyPass {
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: -2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+// form resuable style
+.social_link {
+  display: grid;
+  padding: 1.3rem 0rem;
+  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(2, 12rem);
+  @media screen and (max-width: 31.25em) {
+    //500px
+    grid-template-columns: repeat(2, 14rem);
+  }
+
+  align-items: center;
+  gap: 2rem 3rem;
+  & > div {
+    grid-column: 1 / -1;
+    text-transform: lowercase;
+    padding: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  &_icon {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .google_align {
+    vertical-align: middle;
+  }
+
+  &_google,
+  &_facebook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ea4335;
+    color: #fff;
+  }
+  &_facebook {
+    background: darkblue;
+
+    margin-bottom: 1rem;
+  }
+}
+
+.input_button_wrapper {
+  outline-color: #555;
+  margin-top: 1.5rem;
+  text-align: center;
+  .input_button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: $btnColor;
+    text-transform: capitalize;
+    display: block;
+    padding: 1rem 2.5rem;
+    font-size: 2rem;
+    color: $textColor;
+    cursor: pointer;
+    letter-spacing: 0.175rem;
+    border-radius: 0.4rem;
+    &:disabled {
+      background: darkgray;
+      cursor: no-drop;
+    }
+    &:hover:not(&:disabled) {
+      background: darken($btnColor, 6);
+    }
+  }
+}
+
+// userData
+.user {
+  display: flex;
+  cursor: pointer;
+  height: 100%;
+  align-items: center;
+  transition: all 250ms ease-out;
+  padding: 0rem 1.5rem;
+  margin-right: 0rem;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s ease-in;
+
+  &:hover &_accout_logout {
+    background-color: darken($mainBgColor, 6);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &_accout_logout {
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    background-color: #1e2127;
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+
+    & > div {
+      width: 100%;
+      height: 100%;
+
+      a,
+      span {
+        text-decoration: none;
+        color: $textColor;
+        font-size: 1.6rem;
+        text-transform: capitalize;
+        display: block;
+        padding: 1.42rem 3rem;
+        overflow: hidden;
+        transition: all 0.2s ease-in;
+        &:hover {
+          background-color: darken($mainBgColor, 6.95rem);
+        }
+      }
+    }
+  }
+
+  &_img {
+    clip-path: circle(50%);
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-right: 1rem;
+    display: block;
+    border-radius: 50%;
+  }
+
+  &_name {
+    text-transform: capitalize;
+    letter-spacing: 0.175rem;
+  }
+}
+
+.file {
+    // border-bottom: none;
+    margin-top: -1.5rem;
+    transform: translateY(-1rem);
+    width: 67.5%;
+
+    @media screen and (max-width: 31.25em) {
+      width: 60%;     //500px   
+    }
+    @media screen and (max-width: 21.875em) {
+      width: 66.5%;      //350px
+    }
+    @media screen and (max-width: 18.75em) {
+      width: 75%; //300px
+    }
+
+    &:focus,
+    :invalid {
+      border-bottom: none;
+    }
+  
+}
+
+// display: block;
+
+// preview
+.previewImg {
+  padding-bottom: 1.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}

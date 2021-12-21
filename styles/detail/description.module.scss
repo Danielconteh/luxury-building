@@ -1,0 +1,88 @@
+@import '../variable.scss';
+
+// RESUABLE
+.header_resuable {
+  letter-spacing: 0.25rem;
+  font-size: 1.8rem;
+  padding: 4rem 1.5rem 2rem 1.5rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+// ==========GRID CONTAINER=============
+.detail_grid_container {
+  grid-column: full-start / full-end;
+  grid-row: 3 / 4;
+}
+
+.detail_container_items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+
+  justify-content: space-between;
+  // gap: 2rem 0rem;
+  align-items: center;
+  color: #112;
+
+  text-align: center;
+  position: relative;
+
+  &__headers {
+    &__1 {
+      grid-column: 1 /2;
+      @media screen and (max-width: 50em) {
+        grid-column: 1/-1;
+      }
+      justify-content: space-between;
+
+      @extend .header_resuable;
+      background: rgb(221, 214, 214);
+    }
+    &__2 {
+      @extend .header_resuable;
+      background: #f9f9f9;
+      @media screen and (max-width: 50em) {
+        grid-column: 1/-1;
+        grid-row: 3 / 4;
+      }
+    }
+  }
+
+  &__detail {
+    font-weight: lighter;
+    font-family: 'Times New Roman', Times, serif;
+    color: #112;
+    font-size: 1.65rem;
+    background: rgb(216, 210, 210);
+    background: rgb(221, 214, 214);
+
+    align-self: stretch;
+    padding: 1rem 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+
+    @media screen and (max-width: 50em) {
+      grid-column: 1 /-1;
+    }
+    li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 1.5rem 0rem;
+    }
+  }
+
+  // description setup [only text not header]
+  &__description {
+    background: #f9f9f9;
+    align-self: stretch;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.1rem;
+    padding: 1rem 1.5rem 4rem 1.5rem;
+
+    @media screen and (max-width: 50em) {
+      grid-column: 1 /-1;
+    }
+  }
+}

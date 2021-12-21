@@ -1,0 +1,130 @@
+
+.signIn_Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+
+    &_header{
+        font-size: 2rem;
+        padding: 2rem 0rem;
+    }
+    form{
+        // padding: 1rem 0rem;
+      
+        label{
+              font-size: 1.55rem;
+                display: inline-block;
+                padding-top: 1.25rem;
+                text-transform: capitalize;
+                letter-spacing: 0.175rem;
+                transform: translateY(-6.75rem);
+                transition: all 0.2s ease-in-out;
+
+        }
+
+        input{
+              background: none !important;
+                width: 100%;
+                outline: none;
+                transition: border 250ms ease-in;
+                border: 0.5px solid lightgray;
+                color: #000;
+                text-transform: lowercase !important;
+               padding: 1.5rem;
+               border-radius:.5rem;
+                font-size: 1.7rem;
+
+            &:focus{
+                :valid{
+                    border-bottom: 0.5px solid green;
+    
+                }
+
+                :invalid {
+                        // border-bottom: 0.3px solid $btnColor;
+                        border-bottom: 0.5px solid red;
+                    }
+            }
+            
+            
+
+
+
+            &::placeholder {
+                font-size: 1.65rem;
+                text-transform: capitalize;
+                color: #000; 
+                letter-spacing: .175rem; 
+            }
+
+            &:placeholder-shown + label{
+                // we have to tweek the lable in the html to come after the input becoz[+label] selector
+
+                    transform: translateY(-3rem);
+                    visibility: hidden;
+                    opacity: 0;
+                    // transition: transform all 0.2s;
+            }
+           
+        }
+
+
+        // SUBMIT BUTTON
+
+        button{
+            appearance: none;
+            border:none;
+            background:#555;
+            cursor: pointer;
+            padding: 1.5rem;
+            display: block;
+            margin: 0rem auto;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            letter-spacing: .185rem;
+            text-transform: capitalize;
+             border-radius: .5rem;
+
+        }
+    }
+
+
+
+
+
+    &_social_Auth{
+        display: flex;
+        @media screen and (max-width:40.625em){
+            flex-direction: column;
+        }
+
+        button{
+            appearance: none;
+            border:none;
+            background:none;
+            padding: 1.5rem;
+            cursor: pointer;
+            margin: 0rem 1rem;
+             @media screen and (max-width:40.625em){
+            margin: 1rem;
+        }
+            font-size: 2rem;
+            letter-spacing: .185rem;
+            text-transform: capitalize;
+            border-radius: .5rem;
+            color:#fff;
+            
+            //GOOGLE
+           &:first-child{
+               background:crimson;
+           }
+           // FACEBOOK
+           &:nth-child(2){
+               background:dodgerblue;
+           }
+        }
+    }
+}
+
