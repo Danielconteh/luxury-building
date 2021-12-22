@@ -32,10 +32,10 @@ export const buyHouse =  catchAsync(async (req, res, next) => {
 
     payment_method_types: ['card'],
     mode: 'payment',
-    cancel_url: `http://localhost:3000`,
+    cancel_url: `/`,
 
     // fake a user house puc... store  _id
-    success_url: `http://localhost:3000/api/buyHouse/completed/${house.id}/${user.email}`,
+    success_url: `/api/buyHouse/completed/${house.id}/${user.email}`,
     customer_email: user.email,
     client_reference_id: house.id,
   });
