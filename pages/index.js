@@ -1,22 +1,24 @@
-import NavBar from '../UI/navBar'
-import Carousel from '../UI/carousel'
-import HouseUI from '../UI/houses'
-import Features from '../UI/features'
-import Gallary from '../UI/gallary'
-import Footer from '../UI/footer'
+import NavBar from '../UI/navBar';
+import Carousel from '../UI/carousel';
+import HouseUI from '../UI/houses';
+import Features from '../UI/features';
+import Gallary from '../UI/gallary';
+import Footer from '../UI/footer';
 // import fetch from 'node-fetch'
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/client';
 import { Layout } from '../UI/Layout';
-import Head from 'next/head'
-import {House} from '../mongodConnection/connection'
+import Head from 'next/head';
+import { House } from '../mongodConnection/connection';
 
+const Home = ({ results }) => {
+  const [session, loading] = useSession();
 
-const Home = ({ results }) => { 
-  const [session, loading] = useSession()
   if (results && !loading) {
-    results = JSON.parse(results)
+    results = JSON.parse(results);
     const user = session?.user;
-    if (user)
+    console.log(session);
+
+    if (user && user.name)
       results.user = {
         email: user.email,
         photo: user.image,
@@ -60,8 +62,8 @@ const Home = ({ results }) => {
       </>
     );
   }
-return <h2>loding...</h2>
-}
+  return <h2>loding...</h2>;
+};
 
 // GET ALL HOUSE AND PASS THE DATA TO THE HOUSE AS PROPS
 
@@ -70,13 +72,9 @@ export async function getStaticProps(context) {
   const results = JSON.stringify(data);
   if (!results) return { notFound: true };
   return {
-    props: {results }, // will be passed to the page component as props
+    props: { results }, // will be passed to the page component as props
     revalidate: 10,
-  };
+  }; 
 }
 
-
-
-
-
-export default Home
+export default Home;

@@ -10,10 +10,9 @@ const options = {
   useCreateIndex: true,
   useUnifiedTopology: true,
 }
-const connect1 = mongoose.createConnection(
-  process.env.CONNECTION_URI,
-  options
-);
+export const connect1 = mongoose.createConnection(process.env.CONNECTION_URI, options);
+
+console.log(connect1.readyState);
 
 // const connect2 = mongoose.createConnection(process.env.CONNECTION_URI, options)
 

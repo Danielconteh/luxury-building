@@ -9,7 +9,8 @@ import { getSession } from 'next-auth/client';
 
 // buy house
 export const buyHouse =  catchAsync(async (req, res, next) => {
-   const {user} = await getSession({ req });
+  const { user } = await getSession({ req });
+  console.log(user)
 
   if (!user) return res.writeHead(302, {
        Location: '/',

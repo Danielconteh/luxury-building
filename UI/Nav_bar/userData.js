@@ -1,20 +1,16 @@
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import {signOut } from 'next-auth/client'
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import {signIn, signOut } from 'next-auth/client';
 
-import * as style from '../../styles/navbar.module.scss'
+import * as style from '../../styles/navbar.module.scss';
 
-export const UserData = ({
-  fullname,
-  email,
-  photo, 
-}) => {
-  const router = useRouter()
+export const UserData = ({ fullname, email, photo }) => {
+  const router = useRouter();
 
   // if there is no photo [use the default]
   return (
     <>
-      {fullname && email ? (
+      {fullname ? (
         <div className={style.user}>
           <div className={style.user_img}>
             <Image
@@ -37,31 +33,32 @@ export const UserData = ({
           {/* account & logout show only on hover*/}
           <div className={style.user_accout_logout}>
             <div>
-              <span onClick={async () => await router.push('/account')}>
+              <span onClick={async () => signIn()
+                // await router.push('/account')
+              }
+                >
                 Store
               </span>
             </div>
-        
-              <div
-                onClick={async () =>
-                  signOut({
-                    callbackUrl: await router.push('/'),
-                  })
-                }>
-                <span>logout</span>
-              </div>
-            
+
+            <div
+              onClick={async () =>
+                signOut()
+                // {
+                //   callbackUrl: await router.push('/'),
+                // }
+              }>
+              <span>logout</span>
+            </div>
           </div>
         </div>
       ) : (
         <div
           className={style.signInForm}
-          onClick={async () =>
-            await router.push('/signIn')
-          }>
+          onClick={async () => await router.push('/signIn')}>
           <button>sign in</button>
         </div>
       )}
     </>
   );
-}
+};

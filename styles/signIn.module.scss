@@ -1,15 +1,11 @@
 
 .signIn_Container{
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 70vh;
-
-    &_header{
-        font-size: 2rem;
-        padding: 2rem 0rem;
-    }
+   
     form{
         // padding: 1rem 0rem;
       
@@ -96,8 +92,18 @@
 
     &_social_Auth{
         display: flex;
+        flex-direction: column;
+        padding: 5rem 4rem;
+        background: #f1f1f1;
+        box-shadow: 2px 3px 3px #f1f1f1;
+         &_header{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        padding-bottom: 3rem;
+        letter-spacing: .175rem;
+    }
+
         @media screen and (max-width:40.625em){
-            flex-direction: column;
         }
 
         button{
@@ -107,6 +113,8 @@
             padding: 1.5rem;
             cursor: pointer;
             margin: 0rem 1rem;
+            display: block;
+            margin: 1rem;
              @media screen and (max-width:40.625em){
             margin: 1rem;
         }
@@ -117,12 +125,15 @@
             color:#fff;
             
             //GOOGLE
-           &:first-child{
+           &:nth-child(2){
                background:crimson;
            }
            // FACEBOOK
-           &:nth-child(2){
+           &:nth-child(3){
                background:dodgerblue;
+           }
+           &:nth-child(4){
+               background: teal;
            }
         }
     }
