@@ -2,7 +2,7 @@ import * as Style from '../../styles/detail/writeReview.module.scss'
 import { useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
-
+import axios from 'axios';
 
 const WriteReviews = ({ id }) => {
   const router = useRouter();
