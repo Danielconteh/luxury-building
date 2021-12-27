@@ -19,7 +19,9 @@ const WriteReviews = ({ id }) => {
     if (!id)
       return alert('something went wrong. Our technician are working on it!');
     try {
-      await axios.post(`/api/review/${id}`, {review: review.current.value });
+      const data = await axios.post(`/api/review/${id}`, { review: review.current.value });
+      review.current.value = ''
+      console.log(data)
       return;
     } catch (err) {
       if (
