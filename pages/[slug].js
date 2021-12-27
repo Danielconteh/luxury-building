@@ -37,7 +37,6 @@ const Detail = ({ result }) => {
       };
     }
 
-    // const { data } = result;
 
     const notRotate = false; //disable auto rotate the banner
     const buyInfo = { image: result?.image, slug: result?.slug };
