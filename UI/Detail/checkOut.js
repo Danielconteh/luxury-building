@@ -10,7 +10,8 @@ import { useRouter } from 'next/router';
 
 import * as Style from '../../styles/detail/checkOut.module.scss'
 import Button from '@mui/material/Button';
-import LoadingButton from '@mui/material/LoadingButton';
+import LoadingButton from '@mui/lab/LoadingButton';
+import SendIcon from '@mui/icons-material/Send';
 
 
 
@@ -66,17 +67,21 @@ const Buy = ({ image, slug }) => {
           </div>
           {session && session.user ? (
             <div className={Style.grid_checkOut_container__item_btn}>
+             
               <LoadingButton
                 onClick={async () => await buyHouse(slug)}
                 loading={puc ? true : false}
                 loadingPosition="end"
+                endIcon={<SendIcon />}
                 variant="outlined">
-                puchase it!
+                  puchase
               </LoadingButton>
             </div>
           ) : (
             <div className={Style.grid_checkOut_container__item_btn}>
-              <Button onClick={async () => await router.push('/signIn')}variant="outlined">
+              <Button
+                onClick={async () => await router.push('/signIn')}
+                variant="outlined">
                 signIn
               </Button>{' '}
               to buy house

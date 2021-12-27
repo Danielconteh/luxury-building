@@ -88,13 +88,13 @@
         text-decoration: none;
         display: inline-block;
         transition: all 0.2s ease-in-out;
-        border-radius: 1.15rem;
         border: .1rem solid gray;
         background:none;
         appearance: none;
         cursor: pointer;
         margin-right: 1rem;
-      
+        display: flex;
+        color:#555;
         // &:hover,&:focus{transform: translateY(-.65px);}
         // &:active {transform: translateY(0px);}
       }

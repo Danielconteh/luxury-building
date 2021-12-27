@@ -1,10 +1,10 @@
 import * as Style from '../../styles/detail/writeReview.module.scss'
 import { useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
-import { useRef } from 'react';
+import { useRef,useState } from 'react';
 import axios from 'axios';
-import Button from '@mui/material/Button';
-import LoadingButton from '@mui/material/LoadingButton';
+import LoadingButton from '@mui/lab/LoadingButton';
+import SendIcon from '@mui/icons-material/Send';
 
 const WriteReviews = ({ id }) => {
   const router = useRouter();
@@ -34,6 +34,7 @@ const WriteReviews = ({ id }) => {
       setPuc(false);
       return;
     } catch (err) {
+      console.log(err.response);
       if (err.response.status === 404)
         alert(
           'you have already write a reveiw for this house. \n please write for another house. 👍'
@@ -41,6 +42,7 @@ const WriteReviews = ({ id }) => {
      setPuc(false);
       return;
     }
+
   };
 
   return (
@@ -52,12 +54,17 @@ const WriteReviews = ({ id }) => {
             cols="80"
             placeholder="leave us a review!"
             ref={review}></textarea>
+          {/* <Button onClick={handleReview} variant="outlined">
+            submit
+          </Button> */}
+
           <LoadingButton
             onClick={handleReview}
             loading={puc ? true : false}
             loadingPosition="end"
+            endIcon={<SendIcon />}
             variant="outlined">
-            puchase it!
+            submit
           </LoadingButton>
         </form>
       ) : (
