@@ -5,10 +5,7 @@ import AppError from './errorClass'
 //   return new AppError(message, 404)
 // }
 
-// process.on('unhandledRejection', (err) => {
-//   console.log('error connecting to the server!')
-//  return process.exit(1)
-// })
+
 
 const handleDuplicateErrorDb = (err) => {
   let message
@@ -62,10 +59,8 @@ const sendProduction = (err, req, res, next) => {
 export default (err, req, res, next) => {
   console.log(err)
 
-  if (process.env.NODE_ENV === 'development') {
-    // sendDevelopment(err, req, res, next)
-    // }
-    // if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
+    
     if (err.name === 'danicoError') {
       return sendProduction(err, req, res, next)
     }
@@ -83,9 +78,6 @@ export default (err, req, res, next) => {
     if(error.type === 'StripeConnectionError') result = handleStripeError()
     return sendProduction(result, req, res, next)
 
-    // return res.status(400).json({
-    //   message: err,
-    // })
     // if (error.name === 'CastError') result = handleCastErrorDB(error) invalid IDs
   }
 }
