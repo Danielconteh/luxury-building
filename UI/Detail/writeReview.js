@@ -21,9 +21,9 @@ const WriteReviews = ({ id }) => {
     try {
       const data = await axios.post(`/api/review/${id}`, { review: review.current.value });
       review.current.value = ''
-      console.log(data)
       return;
     } catch (err) {
+      console.log(err.response)
       if (
         err.response.data.message ===
         'The USERID has already been taken. Please use another USERID!'
