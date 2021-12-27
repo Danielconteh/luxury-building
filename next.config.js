@@ -11,11 +11,11 @@ module.exports = {
   },
   env: {
     AUTH0_BASE_URL: 'http://localhost:3000',
-    AUTH0_DOMAIN:'dev-0hcjgj7v.us.auth0.com',
+    AUTH0_DOMAIN: 'dev-0hcjgj7v.us.auth0.com',
     AUTH0_ISSUER_BASE_URL: 'https://dev-0hcjgj7v.us.auth0.com',
-    AUTH0_CLIENT_ID: 'STMpafkINbxciIXKgJ4xG5KzrXpXLPSn',
+    AUTH0_CLIENT_ID: '7mhERQ9aMzIZi8lXvvq6bd7o1s0KzAAJ',
     AUTH0_CLIENT_SECRET:
-      'HwsNABABkM1oJ77BS7SS-GUlt1jNhD1XNTRbevfJYcEhzv-ekpGohD02gaa-PZHK',
+      'QsVl-rYhWvIETNNI8yDuMCYgMYffWvEsMyNZhG7Inq3j27bLcu7ZEo5HIbrtH9SD',
     AUTH0_SECRET:
       'f5069d85d047da8a0fc460321be771927e6741a07d7970114639811053570648',
 

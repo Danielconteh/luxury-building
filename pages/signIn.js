@@ -1,38 +1,25 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import { providers, signIn, getSession, csrfToken } from 'next-auth/client';
 import Footer from '../UI/footer';
 import NavBar from '../UI/navBar';
 import * as Style from '../styles/signIn.module.scss';
 
 export default function SignIn({ providers, csrfToken }) {
+
   return (
     <>
       <NavBar />
 
       <div className={Style.signIn_Container}>
-        {/* <h1 className={Style.signIn_Container_header}>
-          welcome to luxzry zone signIn page
-        </h1> */}
-        {/* <form method="post" action="/api/auth/signin/email">
-          <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="enter your email..."></input>
-          <label id="email">email address</label>
-          <button type="submit">sign in with email</button>
-        </form> */}
 
         <div className={Style.signIn_Container_social_Auth}>
-          <h1 className={Style.signIn_Container_social_Auth_header}>
+          {/* <h1 className={Style.signIn_Container_social_Auth_header}>
             welcome to luxzry zone signIn page
-          </h1>
+          </h1> */}
           {providers &&
             Object.values(providers).map((provider) => {
-              const {name} = provider
-              console.log(provider.id, provider.name);
+              const { name } = provider;
+              if (provider.name === 'Credentials') return;
               return (
                 <button
                   className={Style.name}

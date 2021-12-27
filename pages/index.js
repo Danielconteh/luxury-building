@@ -12,11 +12,12 @@ import { House } from '../mongodConnection/connection';
 
 const Home = ({ results }) => {
   const [session, loading] = useSession();
+    console.log(session);
+
 
   if (results && !loading) {
     results = JSON.parse(results);
     const user = session?.user;
-    console.log(session);
 
     if (user && user.name)
       results.user = {

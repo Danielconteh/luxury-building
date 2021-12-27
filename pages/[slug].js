@@ -1,7 +1,7 @@
 import NavBar from '../UI/navBar';
 import Carousel from '../UI/carousel';
 // import fetch from 'node-fetch'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import axios from 'axios';
 import Head from 'next/head';
 
@@ -22,7 +22,6 @@ import { Layout } from '../UI/Layout';
 
 const Detail = ({ result }) => {
   const router = useRouter();
-  const [review, setReview] = useState('');
 
   const [session, loading] = useSession();
 
@@ -44,29 +43,7 @@ const Detail = ({ result }) => {
     const buyInfo = { image: result?.image, slug: result?.slug };
     //RESUABLE COMPONENT HAVE ALREADY BEEN STYLE[NavBar,Carousel,Footer]
 
-    // POST THE USER REVIEW TO THE DATABASE!
-    const handleReview = async (e) => {
-      e.preventDefault();
 
-      if (!review) return alert('No review data to post');
-      if (!result.id)
-        return alert('something went wrong. Our technician are working on it!');
-      try {
-        await axios.post(`/api/review/${result.id}`, { review });
-        setReview('');
-        return;
-      } catch (err) {
-        if (
-          err.response.data.message ===
-          'The USERID has already been taken. Please use another USERID!'
-        )
-          alert(
-            'you have previous write a reveiw for this house. please write for another house.'
-          );
-        setReview('');
-        return;
-      }
-    };
 
     return (
       <>
@@ -93,9 +70,7 @@ const Detail = ({ result }) => {
             <Reviews review={result?.reviews} />
             <Buy {...buyInfo} />
             <WriteReviews
-              review={review}
-              setReview={setReview}
-              handleReview={handleReview}
+              id={result.id}
             />
             <Footer />
           </div>
@@ -109,7 +84,6 @@ const Detail = ({ result }) => {
 // SERVERSIDE CODE!
 export async function getStaticPaths() {
   const data = await House.find({});
-  // const result = JSON.stringify(data);
 
   const paths =
     data &&
