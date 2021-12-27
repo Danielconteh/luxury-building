@@ -23,11 +23,8 @@ const WriteReviews = ({ id }) => {
       review.current.value = ''
       return;
     } catch (err) {
-      console.log(err.response)
-      if (
-        err.response.data.message ===
-        'The USERID has already been taken. Please use another USERID!'
-      )
+      console.log(err.response.status)
+      if (err.response.status === 404)
         alert(
           'you have previous write a reveiw for this house. \n please write for another house.'
         );
