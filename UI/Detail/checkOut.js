@@ -9,6 +9,8 @@ import { useRouter } from 'next/router';
 
 
 import * as Style from '../../styles/detail/checkOut.module.scss'
+import Button from '@mui/material/Button';
+import LoadingButton from '@mui/material/LoadingButton';
 
 
 
@@ -27,6 +29,7 @@ const Buy = ({ image, slug }) => {
       await stripe.redirectToCheckout({ sessionId: session.data.result.id });
       setPuc(false);
     } catch (err) {
+      console.log(err)
       alert(err.message);
       setPuc(false);
     }
@@ -38,19 +41,21 @@ const Buy = ({ image, slug }) => {
       <Script id="stripe-js" src="https://js.stripe.com/v3/" />
 
       <div className={Style.grid_checkOut_container}>
-        <div className={Style.grid_checkOut_container_header}>puchase house</div>
+        <div className={Style.grid_checkOut_container_header}>
+          puchase house
+        </div>
         <div className={Style.grid_checkOut_container__item}>
           <div className={Style.grid_checkOut_container__item_img}>
-            {image && 
-            <Image 
-            alt='house image'
-              src={image}
-              width={1000}
-              height={667}
-              objectFit="cover"
-              quality={100}
+            {image && (
+              <Image
+                alt="house image"
+                src={image}
+                width={1000}
+                height={667}
+                objectFit="cover"
+                quality={100}
               />
-            }
+            )}
           </div>
 
           <div className={Style.grid_checkOut_container__item_text}>
@@ -61,17 +66,19 @@ const Buy = ({ image, slug }) => {
           </div>
           {session && session.user ? (
             <div className={Style.grid_checkOut_container__item_btn}>
-              <button
-                disabled={puc ? true : false}
-                onClick={async () => await buyHouse(slug)}>
+              <LoadingButton
+                onClick={async () => await buyHouse(slug)}
+                loading={puc ? true : false}
+                loadingPosition="end"
+                variant="outlined">
                 puchase it!
-              </button>
+              </LoadingButton>
             </div>
           ) : (
             <div className={Style.grid_checkOut_container__item_btn}>
-              <button onClick={async () => await router.push('/signIn')}>
+              <Button onClick={async () => await router.push('/signIn')}variant="outlined">
                 signIn
-              </button>{' '}
+              </Button>{' '}
               to buy house
             </div>
           )}

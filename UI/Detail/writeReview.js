@@ -3,32 +3,42 @@ import { useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
 import axios from 'axios';
+import Button from '@mui/material/Button';
+import LoadingButton from '@mui/material/LoadingButton';
 
 const WriteReviews = ({ id }) => {
   const router = useRouter();
   const [session, loading] = useSession();
+   const [puc, setPuc] = useState(false);
 
 
   const review = useRef(null); 
   // POST THE USER REVIEW TO THE DATABASE!
   const handleReview = async (e) => {
     e.preventDefault();
-    console.log(id, review.current.value);
+    setPuc(true);
 
-    if (!review.current.value) return alert('No review data to post');
-    if (!id)
-      return alert('something went wrong. Our technician are working on it!');
+    if (!review.current.value)  {
+      alert('No review data to post 🙄')
+      setPuc(false);
+      return;
+    }
+    if (!id) {
+      alert('something went wrong. Our technician are working on it!')
+      setPuc(false);
+      return;
+    }
     try {
-      const data = await axios.post(`/api/review/${id}`, { review: review.current.value });
+      await axios.post(`/api/review/${id}`, { review: review.current.value });
       review.current.value = ''
+      setPuc(false);
       return;
     } catch (err) {
-      console.log(err.response.status)
       if (err.response.status === 404)
         alert(
-          'you have previous write a reveiw for this house. \n please write for another house.'
+          'you have already write a reveiw for this house. \n please write for another house. 👍'
         );
-     
+     setPuc(false);
       return;
     }
   };
@@ -42,11 +52,16 @@ const WriteReviews = ({ id }) => {
             cols="80"
             placeholder="leave us a review!"
             ref={review}></textarea>
-          <button onClick={handleReview}>submit</button>
+          <LoadingButton
+            onClick={handleReview}
+            loading={puc ? true : false}
+            loadingPosition="end"
+            variant="outlined">
+            puchase it!
+          </LoadingButton>
         </form>
       ) : (
-        <div className={Style.Not_Login}>
-        </div>
+        <div className={Style.Not_Login}></div>
       )}
     </div>
   );
