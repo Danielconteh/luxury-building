@@ -12,7 +12,6 @@ import { House } from '../mongodConnection/connection';
 
 const Home = ({ results }) => {
   const [session, loading] = useSession();
-    console.log(session);
 
 
   if (results && !loading) {

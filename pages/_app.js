@@ -13,6 +13,7 @@ import { Router } from 'next/router';
 import Nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
 import 'toastify-js/src/toastify.css';
+//  import 'react-toastify/dist/ReactToastify.css';
 
 Nprogress.configure({ showSpinner: false });
 

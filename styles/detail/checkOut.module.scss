@@ -95,8 +95,8 @@
         margin-right: 1rem;
         display: flex;
         color:#555;
-        // &:hover,&:focus{transform: translateY(-.65px);}
-        // &:active {transform: translateY(0px);}
+        &:hover,&:focus{transform: translateY(-.65px);}
+        &:active {transform: translateY(0px);}
       }
     }
   }

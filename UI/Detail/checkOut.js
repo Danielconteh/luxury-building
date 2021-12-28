@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-// import Head from 'next/head'
 import axios from 'axios'
 import { useSession } from 'next-auth/client';
 import { useState } from 'react'
@@ -14,6 +13,9 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import SendIcon from '@mui/icons-material/Send';
 
 
+ import { toast } from '../../utility/toast';
+
+
 
 
 const Buy = ({ image, slug }) => {
@@ -22,18 +24,30 @@ const Buy = ({ image, slug }) => {
   const [puc,setPuc] = useState(false)
 
   const buyHouse = async (houseId) => {
-    setPuc(true)
-    const stripe = Stripe(process.env.NEXT_PUBLIC_STRIP_PUBLIC_KEY);
+    
 
+    setPuc(true)
+    let session,stripe;
+     stripe = Stripe(process.env.NEXT_PUBLIC_STRIP_PUBLIC_KEY);
+    
     try {
-      const session = await axios(`/api/buyHouse/${houseId}`);
-      await stripe.redirectToCheckout({ sessionId: session.data.result.id });
-      setPuc(false);
+       session = await axios(`/api/buyHouse/${houseId}`);
     } catch (err) {
-      console.log(err)
-      alert(err.message);
-      setPuc(false);
+      if (err?.response?.data?.status === 'fail') 
+      toast(err.response.data.message,'top')
+      return setPuc(false);   
+      
     }
+
+    try {   
+    await stripe.redirectToCheckout({ sessionId: session?.data?.result?.id });
+    } catch (err) {
+      toast('something went wrong please try again!');
+
+      return setPuc(false);
+    }
+      return setPuc(false);
+      
   };
 
 

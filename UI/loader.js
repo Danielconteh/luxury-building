@@ -4,8 +4,10 @@ import Image from 'next/dist/client/image'
 const Loader = () => {
     return (
       <div>
-        <div>    
-        loading
+        <div className='spinner'>    
+          <svg>
+              <use href='/icons.svg#icon-loader'></use>
+          </svg>
         </div>
       </div>
     );

@@ -1,24 +1,31 @@
 import catchAsync from '../ErrorController/catchAsync'
-import { House,Puchase } from '../mongodConnection/connection'
+import { House,Puchase,User } from '../mongodConnection/connection'
 const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY)
 import { getSession } from 'next-auth/client';
-
-
-
-
+import { myOwnMadeError } from '../ErrorController/errorController';
 
 // buy house
 export const buyHouse =  catchAsync(async (req, res, next) => {
   const { user } = await getSession({ req });
-  console.log(user)
 
   if (!user) return res.writeHead(302, {
        Location: '/',
-     });
-   
+  });
   
-  const house = await House.findOne({ slug: req.query.slug })
-  if (!house) return next('invalid house name')
+    // user exit
+     const check_user = await User.findOne({ email: user.email });
+   
+     
+     const house = await House.findOne({ slug: req.query.slug })
+    if (!house) return next(myOwnMadeError(`invalid house name!`, 'danicoError'));
+  
+
+  // return if user has already puschased this house
+      const check_if_house_has_been_puscgased = await Puchase.find({
+        $and: [{ user: check_user._id }, { house: house.id }],
+      });
+  if (check_if_house_has_been_puscgased.length > 0) return next(myOwnMadeError(`you have already buy this house. please buy another one!`, 'danicoError'));
+  //==================  =================================================   
 
   const session = await stripe.checkout.sessions.create({
     line_items: [
@@ -33,12 +40,12 @@ export const buyHouse =  catchAsync(async (req, res, next) => {
 
     payment_method_types: ['card'],
     mode: 'payment',
-    cancel_url: `https://luxury-building.vercel.app/`,
+    cancel_url: `https://luxury-building.vercel.app/${house.slug}`,
 
-    // fake a user house puc... store  _id
-    success_url: `https://luxury-building.vercel.app/api/buyHouse/completed/${house.id}/${user.email}`,
-    customer_email: user.email,
-    client_reference_id: house.id,
+
+    success_url: `https://luxury-building.vercel.app/account`,
+    customer_email: check_user.email,
+    client_reference_id: house.id, // needed for strpe web-hook
   });
  
 

@@ -10,7 +10,6 @@ const IndoorImage = ({ images }) => {
           {images && images?.map((image, i) => (
             <div key={i} className={Styles.image__design}>
               <Image
-                // src={`/uploads/House-Images/${image}`}
                 src={image}
                 alt={`image${[i]}`}
                 width={2000} 

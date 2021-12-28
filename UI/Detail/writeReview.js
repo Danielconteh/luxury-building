@@ -5,6 +5,7 @@ import { useRef,useState } from 'react';
 import axios from 'axios';
 import LoadingButton from '@mui/lab/LoadingButton';
 import SendIcon from '@mui/icons-material/Send';
+import {toast} from '../../utility/toast'
 
 const WriteReviews = ({ id }) => {
   const router = useRouter();
@@ -19,12 +20,12 @@ const WriteReviews = ({ id }) => {
     setPuc(true);
 
     if (!review.current.value)  {
-      alert('No review data to post 🙄')
+      toast('No review data to post 🙄')
       setPuc(false);
       return;
     }
     if (!id) {
-      alert('something went wrong. Our technician are working on it!')
+      toast('something went wrong. Our technician are working on it!','top')
       setPuc(false);
       return;
     }
@@ -34,9 +35,8 @@ const WriteReviews = ({ id }) => {
       setPuc(false);
       return;
     } catch (err) {
-      console.log(err.response);
       if (err.response.status === 404)
-        alert(
+        toast(
           'you have already write a reveiw for this house. \n please write for another house. 👍'
         );
      setPuc(false);

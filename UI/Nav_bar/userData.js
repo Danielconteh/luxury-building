@@ -41,9 +41,6 @@ export const UserData = ({ fullname, email, photo }) => {
             <div
               onClick={async () =>
                 signOut()
-                // {
-                //   callbackUrl: await router.push('/'),
-                // }
               }>
               <span>logout</span>
             </div>

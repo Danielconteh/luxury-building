@@ -18,6 +18,8 @@ import { useSession } from 'next-auth/client';
 import WriteReviews from '../UI/Detail/writeReview';
 import Reviews from '../UI/Detail/reviews';
 import { Layout } from '../UI/Layout';
+
+import Loader from '../UI/loader';
 // --------------END OF COMPONENT ❤ ------------------
 
 const Detail = ({ result }) => {
@@ -77,7 +79,7 @@ const Detail = ({ result }) => {
       </>
     );
   }
-  return <h1>loading...</h1>;
+  return <Loader/>;
 };
 
 // SERVERSIDE CODE!

@@ -144,9 +144,11 @@
     border:none;
 
 
-    &:hover {
+   @media screen and(min-width:80em){
+      &:hover {
       background: darken(orangered, 20%);
     }
+   }
   }
 
 

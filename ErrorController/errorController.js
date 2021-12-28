@@ -59,7 +59,7 @@ const sendProduction = (err, req, res, next) => {
 export default (err, req, res, next) => {
   console.log(err)
 
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'development') {
     
     if (err.name === 'danicoError') {
       return sendProduction(err, req, res, next)

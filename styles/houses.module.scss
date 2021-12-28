@@ -78,8 +78,10 @@
     letter-spacing: 0.3rem;
 
 
-    &:hover {
+    @media screen and(min-width:80em){
+      &:hover {
       background-color: darken(crimson, 17%);
+    }
     }
   }
   &_country,
@@ -124,11 +126,6 @@
       transition: all .2s ease-in-out;
 
 }
-    // &:hover span{
-    //   letter-spacing: .090rem;
-    // }
-
-
     
   }
 }

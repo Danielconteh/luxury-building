@@ -4,11 +4,12 @@ import NavBar from '../UI/navBar';
 import * as Style from '../styles/account.module.scss';
 import Image from 'next/dist/client/image';
 import { useSession, getSession } from 'next-auth/client';
-// import fetch from 'node-fetch';
-// import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { Puchase, User } from '../mongodConnection/connection';
+
+import Loader from '../UI/loader';
+
 
 // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
@@ -122,7 +123,7 @@ const Account = ({ results }) => {
       </div>
     );
   }
-  return <div>loading...</div>;
+  return <Loader/>;
 };
 
 export async function getServerSideProps({ req }) {
