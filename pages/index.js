@@ -4,7 +4,7 @@ import HouseUI from '../UI/houses';
 import Features from '../UI/features';
 import Gallary from '../UI/gallary';
 import Footer from '../UI/footer';
-// import fetch from 'node-fetch'
+import Loader from '../UI/loader';
 import { useSession } from 'next-auth/client';
 import { Layout } from '../UI/Layout';
 import Head from 'next/head';
@@ -63,7 +63,7 @@ const Home = ({ results }) => {
       </>
     );
   }
-  return <h2>loding...</h2>;
+  return <Loader/>;
 };
 
 // GET ALL HOUSE AND PASS THE DATA TO THE HOUSE AS PROPS

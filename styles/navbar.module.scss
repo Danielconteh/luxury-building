@@ -336,8 +336,11 @@
         padding: 1.42rem 3rem;
         overflow: hidden;
         transition: all 0.2s ease-in;
-        &:hover {
-          background-color: darken($mainBgColor, 6.95rem);
+        @media screen and(min-width: 80em){
+          &:hover {
+            background-color: darken($mainBgColor, 6.95rem);
+          }
+          
         }
       }
     }
