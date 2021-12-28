@@ -4,10 +4,14 @@ import {Puchase, User } from '../../../../mongodConnection/connection';
 
 
 const creatBookingCheckOut = async session => {
+           console.log('reached22222222222222222222!!!!');
+
     const house = session.client_reference_id;
     const user = (await User.findOne({ email: session.customer_email }))._id;
     const price = session.line_items[0].amount / 100;
-    await Puchase.create({ house, user, price });
+   const data = await Puchase.create({ house, user, price });
+           console.log(data);
+  
 }
 
 
@@ -36,6 +40,7 @@ const checkOutHandler = async (req, res) => {
          
          if (event.type === 'checkout.session.completed') {
            // Handle successful charge
+           console.log('reached!!!!')
            creatBookingCheckOut(event.data.object);
          } 
          res.json({ received: true });     
