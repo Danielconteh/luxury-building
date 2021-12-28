@@ -41,6 +41,7 @@ const checkOutHandler = async (req, res) => {
          if (event.type === 'checkout.session.completed') {
            // Handle successful charge
            console.log('reached!!!!')
+           console.log(event.data.object);
            creatBookingCheckOut(event.data.object);
          } 
          res.json({ received: true });     
