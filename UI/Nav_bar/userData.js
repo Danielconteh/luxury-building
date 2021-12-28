@@ -33,7 +33,7 @@ export const UserData = ({ fullname, email, photo }) => {
           {/* account & logout show only on hover*/}
           <div className={style.user_accout_logout}>
             <div>
-              <span onClick={async () => await router.push('/account')}>
+              <span onClick={async () => await router.push('/store')}>
                 Store
               </span>
             </div>

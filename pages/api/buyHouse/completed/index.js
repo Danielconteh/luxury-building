@@ -18,7 +18,7 @@ const stripe = new Stripe(process.env.STRIP_SERVER_SIDE_KEY, {
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 
-const checkOutHandler = (req, res) => {
+const checkOutHandler = async (req, res) => {
 
      if (req.method === 'POST') {
        const buf = await buffer(req);

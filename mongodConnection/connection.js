@@ -12,10 +12,6 @@ const options = {
 }
 export const connect1 = mongoose.createConnection(process.env.CONNECTION_URI, options);
 
-console.log(connect1.readyState);
-
-// const connect2 = mongoose.createConnection(process.env.CONNECTION_URI, options)
-
 export const House = connect1.model('House', houseDesc)
 export const User = connect1.model('User', userData)
 export const Review = connect1.model('Review', review)

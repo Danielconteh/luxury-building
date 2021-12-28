@@ -1,4 +1,3 @@
-import React, { useContext, useState } from 'react'
 import { useRouter } from 'next/router'
 
 // ==============================================
@@ -9,6 +8,8 @@ import { NavHeader } from './Nav_bar/nav'
 import { UserData } from './Nav_bar/userData'
 
 //========================================
+
+
 
 // ============= COMPONENT =====================
 const NavBar = ({ fullname, email, photo }) => {

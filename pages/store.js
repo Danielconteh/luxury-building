@@ -13,11 +13,10 @@ import Loader from '../UI/loader';
 
 // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
-const Account = ({ results }) => {
+const Store = ({ results }) => {
   const [session, loading] = useSession();
   const router = useRouter();
   const [data, setData] = useState(JSON.parse(results));
-  console.log(JSON.parse(results));
   if (!loading) {
     const user = session?.user;
     let results;
@@ -141,4 +140,4 @@ export async function getServerSideProps({ req }) {
   };
 }
 
-export default Account;
+export default Store;

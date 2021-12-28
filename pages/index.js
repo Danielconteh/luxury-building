@@ -8,7 +8,7 @@ import Loader from '../UI/loader';
 import { useSession } from 'next-auth/client';
 import { Layout } from '../UI/Layout';
 import Head from 'next/head';
-import { House } from '../mongodConnection/connection';
+import { House} from '../mongodConnection/connection';
 
 const Home = ({ results }) => {
   const [session, loading] = useSession();
@@ -47,7 +47,6 @@ const Home = ({ results }) => {
               content="width=device-width, initial-scale=1.0"
             />
 
-            {/* <meta http-equiv="refresh" content="30"/> */}
           </Head>
 
           <div className="grid_container">

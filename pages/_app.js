@@ -7,13 +7,11 @@ import '../styles/detail.scss';
 
 
 import { Provider } from 'next-auth/client';
-// import { UserProvider } from '@auth0/nextjs-auth0';
-// import type { AppProps } from 'next/app'
+
 import { Router } from 'next/router';
 import Nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
 import 'toastify-js/src/toastify.css';
-//  import 'react-toastify/dist/ReactToastify.css';
 
 Nprogress.configure({ showSpinner: false });
 

@@ -56,24 +56,3 @@ SignIn.getInitialProps = async (context) => {
   };
 };
 
-
-// export const getServerSideProps = async (context) => {
-//   const { req, res } = context;
-//   const session = await getSession({ req });
-
-//   if (session && res && session.accessToken) {
-//     res.writeHead(302, {
-//       location: '/',
-//     });
-//     res.end();
-//     return;
-//   }
-
-//   return {
-//     props: {
-//       session: undefined,
-//       providers: await providers(context),
-//       csrfToken: await csrfToken(context),
-//     }, // for email signig only}
-//   };
-// };
