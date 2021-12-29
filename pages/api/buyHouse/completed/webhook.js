@@ -17,23 +17,25 @@ const checkOutHandler = async (req, res) => {
        const sig = req.headers['stripe-signature'];
 
        let event;
+
     try {
       event = stripe.webhooks.constructEvent(buf,sig,process.env.STRIPE_WEBHOOK_SECRET);
     } catch (err) {
-     return res.status(400).send(`Webhook Error: ${err.message}`);
+      res.status(400).send(`Webhook Error: ${err.message}`);
+      return;
     }
 
-
-    if (event.type === 'checkout.session.completed') 
-      // Handle successful charge
-      creatBookingCheckOut(event.data.object);
-      return res.json({ received: true, data: event.data.object });  
-    
-//  ================================
-  } else {
-    res.setHeader('Allow', 'POST');
-    res.status(405).end('Method Not Allowed');
-  }
+  
+        if (event.type === 'checkout.session.completed') 
+          // Handle successful charge
+          creatBookingCheckOut(event.data.object);
+        return res.json({ received: true, data: event.data.object });  
+      
+      //  ================================
+     } else {
+       res.setHeader('Allow', 'POST');
+       res.status(405).end('Method Not Allowed');
+     }
 };
 
 export const config = {
