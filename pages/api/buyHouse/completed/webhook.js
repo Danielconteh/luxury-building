@@ -2,29 +2,25 @@ import { buffer } from 'micro';
 import { Puchase, User,House } from '../../../../mongodConnection/connection';
 const Stripe = require('stripe');
 
-export const config = {
-  api: {
-    bodyParser: false, // Disallow body parsing, consume as stream
-  },
-};
+export const config = {api: {bodyParser: false, },};
 
 const stripe = new Stripe(process.env.STRIP_SERVER_SIDE_KEY, {
   apiVersion: '2020-08-27',
 });
 
-const creatBookingCheckOut = async session => {
-    const houseID = (
-      await House.findOne({ name: session.line_item_group.line_items.name })
-    )._id;
-    const userID = (await User.findOne({ email: session.customer_email }))._id;
-    const priceID = session.payment_intent.amount / 100;
-    await Puchase.create({
-      house: '612a0bf674f1a82d902b78a7',
-      user: userID,
-      price: 9000000,
-    });
+// const creatBookingCheckOut = async session => {
+//     const houseID = (
+//       await House.findOne({ name: session.line_item_group.line_items.name })
+//     )._id;
+//     const userID = (await User.findOne({ email: session.customer_email }))._id;
+//     const priceID = session.payment_intent.amount / 100;
+//     await Puchase.create({
+//       house: '612a0bf674f1a82d902b78a7',
+//       user: userID,
+//       price: 9000000,
+//     });
         
-}
+// }
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
@@ -42,12 +38,25 @@ const checkOutHandler = async (req, res) => {
        } catch (err) {
          return res.status(400).send(`Webhook Error: ${err.message}`);
        }
-
          
-         if (event.type === 'checkout.session.completed'){
-            creatBookingCheckOut(event.data.object);
+       if (event.type === 'checkout.session.completed') {
+           const session = event.data.object
+            const houseID = (
+              await House.findOne({
+                name: session.line_item_group.line_items.name,
+              })
+            )._id;
+            const userID = (
+              await User.findOne({ email: session.customer_email })
+            )._id;
+            const priceID = session.payment_intent.amount / 100;
+           const data =  await Puchase.create({
+              house: houseID,
+              user: userID,
+              price: priceID,
+            });
 
-            return res.status(200).json({ received: true });
+            return res.status(200).json({ received: true,data });
       };
          
        
