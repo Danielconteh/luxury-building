@@ -1,5 +1,11 @@
 import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
+
+import uniqid from 'uniqid';
+
+
+
+
 export default (req, res) =>
   NextAuth(req, res, {
     // Configure one or more authentication providers
@@ -20,7 +26,21 @@ export default (req, res) =>
     pages: {
       signIn: '/signIn',
     },   
-    
+    callbacks: {
+      async signIn({ user, account, profile, email, credentials }) {
+        user.pin = uniqid(`${user.name}-`);
+      return true
+    },
+    async redirect({ url, baseUrl }) {
+      return baseUrl
+    },
+    async session({ session, user, token }) {
+      return session
+    },
+    async jwt({ token, user, account, profile, isNewUser }) {
+      return token
+    }
+}
 
   });
 

@@ -1,10 +1,13 @@
 import { Puchase, User } from '../../../../mongodConnection/connection';
 const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY);
 const micro = require('micro')
+import { getSession } from 'next-auth/client';
+
 
 // const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 const creatBookingCheckOut = async session => {
+   const session = await getSession({ req });
   const house = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_details.email }))._id;
   if(house && user) await Puchase.create({house,user});  
