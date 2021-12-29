@@ -7,7 +7,7 @@ const micro = require('micro')
 const creatBookingCheckOut = async session => {
   const house = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_details.email }))._id;
-  await Puchase.create({house,user});  
+  if(house && user) await Puchase.create({house,user});  
 }
 
 const checkOutHandler = async (req, res) => {
