@@ -11,10 +11,6 @@ export const puchase = new Schema({
     ref: 'User',
     required: [true, 'there must be user'],
   },
-  price: {
-    type: Number,
-    required: [true, 'A house must have a puschased price!'],
-  },
   createdAt: { type: Date, default: Date.now() },
   paid: { type: Boolean, default: true },
 });

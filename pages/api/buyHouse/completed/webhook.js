@@ -26,10 +26,11 @@ const checkOutHandler = async (req, res) => {
     }
 
   
-        if (event.type === 'checkout.session.completed') 
-          // Handle successful charge
-          creatBookingCheckOut(event.data.object);
-        return res.json({ received: true, data: event.data.object });  
+       if (event.type === 'checkout.session.completed') {
+         // Handle successful charge
+         creatBookingCheckOut(event.data.object);
+         return res.json({ received: true, data: event.data.object });
+       }  else res.status(400).end('something went wrong...');
       
       //  ================================
      } else {

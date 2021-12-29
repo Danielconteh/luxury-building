@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import axios from 'axios'
 import { useSession } from 'next-auth/client';
 import { useState } from 'react'
@@ -42,13 +41,10 @@ const Buy = ({ image, slug }) => {
     try {   
     await stripe.redirectToCheckout({ sessionId: session?.data?.result?.id });
     } catch (err) {
-      console.log(err)
       toast('something went wrong please try again!');
-
       return setPuc(false);
     }
-      return setPuc(false);
-      
+      return setPuc(false);   
   };
 
 
@@ -77,7 +73,7 @@ const Buy = ({ image, slug }) => {
           <div className={Style.grid_checkOut_container__item_text}>
             <div> What are you waiting for?</div>
             <div>
-              7 days. 1 adventure. Infinite memories. Make it yours today!
+              enjoy all the luxury and comfort you need!
             </div>
           </div>
           {session && session.user ? (
