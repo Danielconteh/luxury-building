@@ -5,7 +5,7 @@ const micro = require('micro')
 // const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 const creatBookingCheckOut = async session => {
-  const house = session.customer_details.email;
+  const house = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_details.email }))._id;
   await Puchase.create({house,user});  
 }
