@@ -17,7 +17,7 @@ const Home = ({ results }) => {
   if (results && !loading) {
     results = JSON.parse(results);
     const user = session?.user;
-
+    console.log(session)
     if (user && user.name)
       results.user = {
         email: user.email,

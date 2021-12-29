@@ -7,6 +7,7 @@ module.exports = {
       'res.cloudinary.com',
       'scontent-lga3-2.xx.fbcdn.net',
       's.gravatar.com',
+      'avatars.githubusercontent.com',
     ],
   },
   env: {
@@ -65,7 +66,7 @@ module.exports = {
     STRIP_SERVER_SIDE_KEY:
       'sk_test_51JhEKrHiBu88YUh3DM4dwuoC0QhsSNL4e6bcecfgLedmyMmGpGhtqczbkA9IOfRVd6wkb4SqajA8Uf7Vs3f58UNi00a1Sq3RRT',
 
-    STRIPE_WEBHOOK_SECRET:'whsec_7GTkqaz0SyHePJRzX6VamemJ4lZ1WXN8',
+    STRIPE_WEBHOOK_SECRET: 'whsec_7GTkqaz0SyHePJRzX6VamemJ4lZ1WXN8',
   },
 };
 

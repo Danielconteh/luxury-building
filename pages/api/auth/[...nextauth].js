@@ -17,9 +17,6 @@ export default (req, res) =>
     ],
     database: process.env.CONNECTION_URI,
     secret: process.env.NEXTAUTH_SECRET_KEY,
-    jwt: {
-      secret: process.env.JWT_SECRET,
-    },
     pages: {
       signIn: '/signIn',
     },   
