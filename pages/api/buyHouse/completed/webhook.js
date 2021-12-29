@@ -1,6 +1,7 @@
-import { buffer } from 'micro';
+// import { buffer } from 'micro';
 import { Puchase, User } from '../../../../mongodConnection/connection';
 const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY);
+const micro = require('micro')
 
 
 
@@ -8,13 +9,12 @@ const creatBookingCheckOut = async session => {
     // const house = session.client_reference_id;
     // const user = (await User.findOne({ email: session.customer_email }))._id;
     // const price = session.payment_intent.amount / 100;
-  if (session) {
+  if (session.client_reference_id) {
     await Puchase.create({
       house: '612a0bb674f1a82d902b789e',
       user: '612a0bb674f1a82d902b7891',
       price: 90000,
     });
-    
   }
         
   
@@ -26,7 +26,7 @@ const creatBookingCheckOut = async session => {
 const checkOutHandler = async (req, res) => {
 
      if (req.method === 'POST') {
-       const buf = await buffer(req);
+       const buf = await micro.buffer(req);
        const sig = req.headers['stripe-signature'];
 
        let event;
