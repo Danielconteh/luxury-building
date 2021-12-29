@@ -28,17 +28,18 @@ export default (req, res) =>
     },   
     callbacks: {
       async signIn({ user, account, profile, email, credentials }) {
-        user.pin = uniqid(`${user.name}-`);
       return true
     },
     async redirect({ url, baseUrl }) {
       return baseUrl
     },
-    async session({ session, user, token }) {
+      async session({ session, user, token }) {
+       user.pin = uniqid(`${user.name}-`);
       return session
     },
-    async jwt({ token, user, account, profile, isNewUser }) {
-      return token
+      async jwt({ token, user, account, profile, isNewUser }) {
+        if (isNewUser) {user.pin = uniqid(`${user.name}-`)}
+        return token
     }
 }
 
