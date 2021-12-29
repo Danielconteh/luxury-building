@@ -40,25 +40,16 @@ const checkOutHandler = async (req, res) => {
        try {
          event = stripe.webhooks.constructEvent(buf, sig, webhookSecret);
        } catch (err) {
-         console.log('error', err)
-         res.status(400).send(`Webhook Error: ${err.message}`);
-         return;
+         return res.status(400).send(`Webhook Error: ${err.message}`);
        }
 
          
-       if (event.type === 'checkout.session.completed') {
-         // Handle successful charge
-         console.log(event.data.object);
-        //  creatBookingCheckOut(event.data.object);
-         return res.json({
-           name: 'danico',
-           data:event.data.object,
-           received: true
-         }); 
-           
-         }
+         if (event.type === 'checkout.session.completed'){
+            creatBookingCheckOut(event.data.object);
+
+            return res.status(200).json({ received: true });
+      };
          
-          return res.json({ received: true });  
        
       //  ================================
      } else {

@@ -50,11 +50,10 @@ export const buyHouse =  catchAsync(async (req, res, next) => {
   });
  
 
-  return res.status(200).json({
-    status: 'sucessfull',
-    price: house.price,
-    result: session,
-  })
+res.status(200).json({
+  status: 'success',
+  session,
+});
 })
 
 
