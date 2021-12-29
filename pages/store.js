@@ -20,6 +20,7 @@ const Store = ({ results }) => {
   const [session, loading] = useSession();
   const router = useRouter();
   const [data, setData] = useState(JSON.parse(results));
+  console.log(data)
   if (!loading) {
     const user = session?.user;
     let results;
@@ -35,25 +36,24 @@ const Store = ({ results }) => {
     const handleDelete = async (id) => {
       try {
         if (confirm('Are you sure, you want to perform this action!')) {
-          const res = await axios.delete(
-            `https://luxury-building.vercel.app/api/buyHouse/${id}`
-          );
+          const res = await axios.delete(`/api/buyHouse/${id}`);
 
           if (res.status === 204) {
             const filter = data.filter((el) => {
               return el._id !== id;
             });
             // updat the UI
-            setData(filter);
-            return;
+            return setData(filter);
+           
           }
         } else {
-         toast('something went wrong please try again!','top');
-          return;
+        return toast('something went wrong please try again!', 'top');
         }
       } catch (err) {
-        toast(err.message);
+        return toast(err.message);
       }
+
+
     };
 
     return (
