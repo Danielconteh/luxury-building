@@ -58,9 +58,9 @@ export const buyHouse =  catchAsync(async (req, res, next) => {
 
 
 
-export const deleteHouse = catchAsync(async (req, res) => {
-  await Puchase.deleteOne({ _id: req.query.slug })
-  return res.status(204).json({
-    data:null
-  });
- })
+export const deleteHouse = async (req, res) => {
+  const data = await Puchase.deleteOne({ _id: req.query.slug })
+ return res.status(200).json({
+  data
+ });
+ }

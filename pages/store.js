@@ -51,7 +51,6 @@ const Store = ({ results }) => {
         return toast('something went wrong please try again!', 'top');
         }
       } catch (err) {
-        console.log(err.respone)
         console.log(err);
 
         return toast(err.message);
