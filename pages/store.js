@@ -39,7 +39,7 @@ const Store = ({ results }) => {
           const res = await axios.delete(`/api/buyHouse/${id}`);
         console.log(res);
 
-          if (res.status === 204) {
+          if (res.status === 200) {
             const filter = data.filter((el) => {
               return el._id !== id;
             });
