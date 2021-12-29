@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import { Puchase, User } from '../mongodConnection/connection';
 
 import Loader from '../UI/loader';
+import {toast} from '../utility/toast'
 
 
 // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
@@ -33,7 +34,7 @@ const Store = ({ results }) => {
       try {
         if (confirm('Are you sure, you want to perform this action!')) {
           const res = await axios.delete(
-            `http://localhost:3000/api/buyHouse/${id}`
+            `https://luxury-building.vercel.app/api/buyHouse/${id}`
           );
 
           if (res.status === 204) {
@@ -45,11 +46,11 @@ const Store = ({ results }) => {
             return;
           }
         } else {
-          console.log('undone!');
+         toast('something went wrong please try again!','top');
           return;
         }
       } catch (err) {
-        alert(err.message);
+        toast(err.message);
       }
     };
 
