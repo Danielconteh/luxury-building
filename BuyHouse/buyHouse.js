@@ -49,8 +49,7 @@ export const buyHouse =  catchAsync(async (req, res, next) => {
 
     success_url: 'https://luxury-building.vercel.app/store',
 
-    // customer_email: user.email,
-      customer_email:user.name,
+    customer_email: user.email || 'guest@gmail.com',
     client_reference_id: house.id, // needed for strpe web-hook
   });
  
