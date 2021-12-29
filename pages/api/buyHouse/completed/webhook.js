@@ -1,20 +1,21 @@
 import { buffer } from 'micro';
-import { Puchase, User } from '../../../../mongodConnection/connection';
+import { Puchase, User,House } from '../../../../mongodConnection/connection';
 const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY);
 
 
 
 const creatBookingCheckOut = async session => {
-    // const house = session.client_reference_id;
-    // const user = (await User.findOne({ email: session.customer_email }))._id;
-    // const price = session.payment_intent.amount / 100;
+    const houseID = (
+      await House.findOne({ name: session.line_item_group.line_items.name })
+    )._id;
+    const userID = (await User.findOne({ email: session.customer_email }))._id;
+    const priceID = session.payment_intent.amount / 100;
     await Puchase.create({
-      house: '612a0bb674f1a82d902b789e',
-      user: '612a0bb674f1a82d902b7891',
-      price: 90000,
+      house: houseID,
+      user: userID,
+      price: priceID,
     });
         
-  
 }
 
 // const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
