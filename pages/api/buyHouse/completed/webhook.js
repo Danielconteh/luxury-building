@@ -1,26 +1,13 @@
 import { buffer } from 'micro';
 import { Puchase, User,House } from '../../../../mongodConnection/connection';
-const Stripe = require('stripe');
+const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY);
 
 export const config = {api: {bodyParser: false, },};
 
-const stripe = new Stripe(process.env.STRIP_SERVER_SIDE_KEY, {
-  apiVersion: '2020-08-27',
-});
+// const stripe = new Stripe(process.env.STRIP_SERVER_SIDE_KEY, {
+//   apiVersion: '2020-08-27',
+// });
 
-// const creatBookingCheckOut = async session => {
-//     const houseID = (
-//       await House.findOne({ name: session.line_item_group.line_items.name })
-//     )._id;
-//     const userID = (await User.findOne({ email: session.customer_email }))._id;
-//     const priceID = session.payment_intent.amount / 100;
-//     await Puchase.create({
-//       house: '612a0bf674f1a82d902b78a7',
-//       user: userID,
-//       price: 9000000,
-//     });
-        
-// }
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
