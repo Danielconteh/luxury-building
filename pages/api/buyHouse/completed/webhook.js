@@ -9,7 +9,7 @@ const creatBookingCheckOut = async session => {
     // const house = session.client_reference_id;
     // const user = (await User.findOne({ email: session.customer_email }))._id;
     // const price = session.payment_intent.amount / 100;
-  if (session.customer_email) {
+  if (session.customer_details.email) {
     await Puchase.create({
       house: session.client_reference_id,
       user: '612a0bb674f1a82d902b7891',
@@ -47,7 +47,7 @@ const checkOutHandler = async (req, res) => {
            // Handle successful charge
            creatBookingCheckOut(event.data.object);
          
-          return res.json({ received: true, data: event.data.object });  
+          return res.json({ received: true,check:typeof(event.data.object), data: event.data.object });  
        
       //  ================================
      } else {
