@@ -6,18 +6,16 @@ const micro = require('micro')
 
 
 const creatBookingCheckOut = async session => {
-    // const house = session.client_reference_id;
-    // const user = (await User.findOne({ email: session.customer_email }))._id;
-    // const price = session.payment_intent.amount / 100;
+  // const house = session.client_reference_id;
+  const user = (await User.findOne({ email: session.customer_details.email }))._id;
+  // const price = session.payment_intent.amount / 100;
   if (session.customer_details.email) {
     await Puchase.create({
       house: session.client_reference_id,
-      user: '612a0bb674f1a82d902b7891',
+      user,
       price: 90000,
     });
   }
-        
-  
 }
 
 // const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
