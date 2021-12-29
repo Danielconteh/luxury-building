@@ -53,6 +53,7 @@ const sendProduction = (err, req, res, next) => {
   return res.status(500).json({
     status: 'fail',
     message: 'something went wrong...',
+    msg:err
   })
 }
  
