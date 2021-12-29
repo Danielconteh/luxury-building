@@ -1,8 +1,16 @@
 import { buffer } from 'micro';
 import { Puchase, User,House } from '../../../../mongodConnection/connection';
-const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY);
+const Stripe = require('stripe');
 
+export const config = {
+  api: {
+    bodyParser: false, // Disallow body parsing, consume as stream
+  },
+};
 
+const stripe = new Stripe(process.env.STRIP_SERVER_SIDE_KEY, {
+  apiVersion: '2020-08-27',
+});
 
 const creatBookingCheckOut = async session => {
     const houseID = (
@@ -18,7 +26,7 @@ const creatBookingCheckOut = async session => {
         
 }
 
-// const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 
 const checkOutHandler = async (req, res) => {
@@ -30,11 +38,7 @@ const checkOutHandler = async (req, res) => {
        let event;
 
        try {
-         event = stripe.webhooks.constructEvent(
-           buf,
-           sig,
-           process.env.STRIPE_WEBHOOK_SECRET
-         );
+         event = stripe.webhooks.constructEvent(buf, sig, webhookSecret);
        } catch (err) {
          res.status(400).send(`Webhook Error: ${err.message}`);
          return;
@@ -56,10 +60,5 @@ const checkOutHandler = async (req, res) => {
      }
 };
 
-export const config = {
-  api: {
-    bodyParser: false, // Disallow body parsing, consume as stream
-  },
-};
 
 export default checkOutHandler;
