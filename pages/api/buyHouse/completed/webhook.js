@@ -11,9 +11,9 @@ const creatBookingCheckOut = async session => {
     const userID = (await User.findOne({ email: session.customer_email }))._id;
     const priceID = session.payment_intent.amount / 100;
     await Puchase.create({
-      house: houseID,
+      house: '612a0bf674f1a82d902b78a7',
       user: userID,
-      price: priceID,
+      price: 9000000,
     });
         
 }
@@ -41,9 +41,11 @@ const checkOutHandler = async (req, res) => {
        }
 
          
-         if (event.type === 'checkout.session.completed') 
-           // Handle successful charge
-           creatBookingCheckOut(event.data.object);
+       if (event.type === 'checkout.session.completed') {
+         // Handle successful charge
+         creatBookingCheckOut(event.data.object);
+           
+         }
          
           return res.json({ received: true });  
        
