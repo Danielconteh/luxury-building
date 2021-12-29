@@ -26,22 +26,22 @@ export default (req, res) =>
     pages: {
       signIn: '/signIn',
     },   
-    callbacks: {
-      async signIn({ user, account, profile, email, credentials }) {
-      return true
-    },
-    async redirect({ url, baseUrl }) {
-      return baseUrl
-    },
-      async session({ session, user, token }) {
-       user.pin = uniqid(`${user.name}-`);
-      return session
-    },
-      async jwt({ token, user, account, profile, isNewUser }) {
-        user.pin = uniqid(`${user.name}-`)
-        return token
-    }
-}
+//     callbacks: {
+//       async signIn({ user, account, profile, email, credentials }) {
+//       return true
+//     },
+//     async redirect({ url, baseUrl }) {
+//       return baseUrl
+//     },
+//       async session({ session, user, token }) {
+//        user.pin = uniqid(`${user.name}-`);
+//       return session
+//     },
+//       async jwt({ token, user, account, profile, isNewUser }) {
+//         user.pin = uniqid(`${user.name}-`)
+//         return token
+//     }
+// }
 
   });
 

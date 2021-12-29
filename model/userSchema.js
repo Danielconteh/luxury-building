@@ -4,7 +4,7 @@ const crypto = require('crypto')
 import { Schema } from 'mongoose'
 
 export const userData = new Schema({
-  fullname: {
+  name: {
     type: String,
     required: [true, 'fullname must not be empty'],
     trim: true,
@@ -17,30 +17,29 @@ export const userData = new Schema({
     unique: true,
     lowercase: true,
   },
-  photo: {
+  image: {
     type: String,
-    default: '',
   },
-  password: {
-    type: String,
-    required: [true, 'Please enter your password'],
-    minlength: [8, 'password is too short!'],
-    select: false,
-  },
-  passwordConfirm: {
-    type: String,
-    required: [true, 'Please confirm your password'],
-    validate: {
-      validator: function (el) {
-        return el === this.password
-      },
-      message: 'password are not the same!',
-    },
-  },
-  active: {
-    type: Boolean,
-    default:false
-},
+//   password: {
+//     type: String,
+//     required: [true, 'Please enter your password'],
+//     minlength: [8, 'password is too short!'],
+//     select: false,
+//   },
+//   passwordConfirm: {
+//     type: String,
+//     required: [true, 'Please confirm your password'],
+//     validate: {
+//       validator: function (el) {
+//         return el === this.password
+//       },
+//       message: 'password are not the same!',
+//     },
+//   },
+//   active: {
+//     type: Boolean,
+//     default:false
+// },
   role: {
     type: String,
     default: 'user',
