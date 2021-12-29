@@ -7,6 +7,8 @@ import { useSession, getSession } from 'next-auth/client';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { Puchase, User } from '../mongodConnection/connection';
+import Head from 'next/head';
+import { Layout } from '../UI/Layout';
 
 import Loader from '../UI/loader';
 import {toast} from '../utility/toast'
@@ -55,6 +57,24 @@ const Store = ({ results }) => {
     };
 
     return (
+       <Layout>
+          <Head>
+            <title>home page</title>
+
+            <meta charset="UTF-8" />
+            <meta
+              name="keywords"
+              content="home, building, buy house, office building, sell house, puschased house"
+            />
+            <meta name="description" content="free house demo project!" />
+
+            <meta name="author" content="Daniel Conteh" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+
+          </Head>
       <div className={Style.account_container}>
         <NavBar {...results} />
         <div className={Style.puschased_house}>
@@ -120,7 +140,8 @@ const Store = ({ results }) => {
         </div>
 
         <Footer />
-      </div>
+        </div>
+    </Layout>
     );
   }
   return <Loader/>;
