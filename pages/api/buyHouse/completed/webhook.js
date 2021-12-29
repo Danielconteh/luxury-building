@@ -7,7 +7,7 @@ const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY);
 const creatBookingCheckOut = async session => {
     const house = session.client_reference_id;
     const user = (await User.findOne({ email: session.customer_email }))._id;
-    const price = session.display_items[0].amount / 100;
+    const price = session.payment_intent.amount / 100;
     await Puchase.create({ house, user, price });
         
   
