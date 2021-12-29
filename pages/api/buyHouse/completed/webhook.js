@@ -40,7 +40,7 @@ const checkOutHandler = async (req, res) => {
        try {
          event = stripe.webhooks.constructEvent(buf, sig, webhookSecret);
        } catch (err) {
-         console.log(err)
+         console.log('error', err)
          res.status(400).send(`Webhook Error: ${err.message}`);
          return;
        }
@@ -49,7 +49,12 @@ const checkOutHandler = async (req, res) => {
        if (event.type === 'checkout.session.completed') {
          // Handle successful charge
          console.log(event.data.object);
-         creatBookingCheckOut(event.data.object);
+        //  creatBookingCheckOut(event.data.object);
+         return res.json({
+           name: 'danico',
+           data:event.data.object,
+           received: true
+         }); 
            
          }
          
