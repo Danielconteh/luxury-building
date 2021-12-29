@@ -24,7 +24,12 @@ export const buyHouse =  catchAsync(async (req, res, next) => {
       const check_if_house_has_been_puscgased = await Puchase.find({
         $and: [{ user: check_user._id }, { house: house.id }],
       });
-  if (check_if_house_has_been_puscgased.length > 0) return next(myOwnMadeError(`you have already buy this house. please buy another one!`, 'danicoError'));
+  if (check_if_house_has_been_puscgased.length !== 0) return next(
+    myOwnMadeError(
+      `you have already buy this house. please buy another one!`,
+      'danicoError'
+    )
+  );
   //==================  =================================================   
 
   const session = await stripe.checkout.sessions.create({

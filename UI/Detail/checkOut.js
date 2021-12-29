@@ -33,6 +33,7 @@ const Buy = ({ image, slug }) => {
        session = await axios(`/api/buyHouse/${houseId}`);
     } catch (err) {
       if (err?.response?.data?.status === 'fail') 
+        console.log(err.response);
       toast(err.response.data.message,'top')
       return setPuc(false);   
       
@@ -41,6 +42,8 @@ const Buy = ({ image, slug }) => {
     try {   
     await stripe.redirectToCheckout({ sessionId: session?.data?.result?.id });
     } catch (err) {
+      console.log(err)
+      // console.log(err.response)
       toast('something went wrong please try again!');
       return setPuc(false);
     }
