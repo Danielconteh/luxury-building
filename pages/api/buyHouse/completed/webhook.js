@@ -1,15 +1,26 @@
 import { buffer } from 'micro';
-import { Puchase, User,House } from '../../../../mongodConnection/connection';
+import { Puchase, User } from '../../../../mongodConnection/connection';
 const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY);
 
-export const config = {api: {bodyParser: false, },};
-
-// const stripe = new Stripe(process.env.STRIP_SERVER_SIDE_KEY, {
-//   apiVersion: '2020-08-27',
-// });
 
 
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+const creatBookingCheckOut = async session => {
+    // const house = session.client_reference_id;
+    // const user = (await User.findOne({ email: session.customer_email }))._id;
+    // const price = session.payment_intent.amount / 100;
+  if (session) {
+    await Puchase.create({
+      house: '612a0bb674f1a82d902b789e',
+      user: '612a0bb674f1a82d902b7891',
+      price: 90000,
+    });
+    
+  }
+        
+  
+}
+
+// const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 
 const checkOutHandler = async (req, res) => {
@@ -21,31 +32,22 @@ const checkOutHandler = async (req, res) => {
        let event;
 
        try {
-         event = stripe.webhooks.constructEvent(buf, sig, webhookSecret);
+         event = stripe.webhooks.constructEvent(
+           buf,
+           sig,
+           process.env.STRIPE_WEBHOOK_SECRET
+         );
        } catch (err) {
-         return res.status(400).send(`Webhook Error: ${err.message}`);
+         res.status(400).send(`Webhook Error: ${err.message}`);
+         return;
        }
-         
-       if (event.type === 'checkout.session.completed') {
-           const session = event.data.object
-            const houseID = (
-              await House.findOne({
-                name: session.line_item_group.line_items.name,
-              })
-            )._id;
-            const userID = (
-              await User.findOne({ email: session.customer_email })
-            )._id;
-            const priceID = session.payment_intent.amount / 100;
-           const data =  await Puchase.create({
-              house: houseID,
-              user: userID,
-              price: priceID,
-            });
 
-            return res.status(200).json({ received: true,data });
-      };
          
+         if (event.type === 'checkout.session.completed') return
+           // Handle successful charge
+           creatBookingCheckOut(event.data.object);
+         
+          return res.json({ received: true });  
        
       //  ================================
      } else {
@@ -54,5 +56,10 @@ const checkOutHandler = async (req, res) => {
      }
 };
 
+export const config = {
+  api: {
+    bodyParser: false, // Disallow body parsing, consume as stream
+  },
+};
 
 export default checkOutHandler;
