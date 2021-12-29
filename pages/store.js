@@ -37,7 +37,8 @@ const Store = ({ results }) => {
       try {
         if (confirm('Are you sure, you want to perform this action!')) {
           const res = await axios.delete(`/api/buyHouse/${id}`);
-        console.log(res);
+          console.log(res);
+
 
           if (res.status === 200) {
             const filter = data.filter((el) => {
@@ -52,8 +53,7 @@ const Store = ({ results }) => {
         }
       } catch (err) {
         console.log(err);
-
-        return toast(err.message);
+        return toast(err.message, 'top');
       }
 
 
