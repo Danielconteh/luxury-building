@@ -38,7 +38,7 @@ export default (req, res) =>
       return session
     },
       async jwt({ token, user, account, profile, isNewUser }) {
-        if (isNewUser) {user.pin = uniqid(`${user.name}-`)}
+        user.pin = uniqid(`${user.name}-`)
         return token
     }
 }
