@@ -43,7 +43,7 @@ const checkOutHandler = async (req, res) => {
        }
 
          
-         if (event.type === 'checkout.session.completed') return
+         if (event.type === 'checkout.session.completed') 
            // Handle successful charge
            creatBookingCheckOut(event.data.object);
          
