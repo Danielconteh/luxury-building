@@ -32,16 +32,13 @@ export default (req, res) =>
         return baseUrl;
       },
       async session({ session, user, token }) {
-        session.Id = user.ID;
+        // session.Id = user.ID;
         return session;
       },
-      async jwt({ token, user, account, profile, isNewUser }) {
-        console.log('JWT ==================');
-        if (user) {
-          user.ID = uuidv4();
-        }
-        return token;
-      },
+      // async jwt({ token, user, account, profile, isNewUser }) {
+
+      //   return token;
+      // },
     },
   });
 
