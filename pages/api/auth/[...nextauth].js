@@ -37,8 +37,8 @@ export default (req, res) =>
         //  ...so we set "user" param of "token" to object from "authorize"...
         //  ...and return it...
         if (user) { 
+          user.ID = '1234'
           token.user = user
-          token.ID = '1234'
         } 
         return Promise.resolve(token); // ...here
       },
