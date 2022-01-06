@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
 
-import uniqid from 'uniqid';
+const { v4: uuidv4 } = require('uuid');
 
 
 
@@ -19,29 +19,29 @@ export default (req, res) =>
       Providers.GitHub({
         clientId: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
+        
       }),
     ],
     database: process.env.CONNECTION_URI,
     secret: process.env.NEXTAUTH_SECRET_KEY,
     pages: {
       signIn: '/signIn',
-    },   
-//     callbacks: {
-//       async signIn({ user, account, profile, email, credentials }) {
-//       return true
-//     },
-//     async redirect({ url, baseUrl }) {
-//       return baseUrl
-//     },
-//       async session({ session, user, token }) {
-//        user.pin = uniqid(`${user.name}-`);
-//       return session
-//     },
-//       async jwt({ token, user, account, profile, isNewUser }) {
-//         user.pin = uniqid(`${user.name}-`)
-//         return token
-//     }
-// }
-
+    },
+    callbacks: {
+      async redirect({ url, baseUrl }) {
+        return baseUrl;
+      },
+      async session({ session, user, token }) {
+        session.Id = user.ID;
+        return session;
+      },
+      async jwt({ token, user, account, profile, isNewUser }) {
+        console.log('JWT ==================');
+        if (account) {
+          user.ID = uuidv4();
+        }
+        return token;
+      },
+    },
   });
 
