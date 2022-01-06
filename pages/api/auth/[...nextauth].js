@@ -36,6 +36,8 @@ export default (req, res) =>
         //  "token" is being send below to "session" callback...
         //  ...so we set "user" param of "token" to object from "authorize"...
         //  ...and return it...
+        user.ID = '1234'
+        user && (token.Id = user.ID);
         user && (token.user = user);
         return Promise.resolve(token); // ...here
       },
@@ -44,10 +46,27 @@ export default (req, res) =>
         //  "session" is current session object
         //  below we set "user" param of "session" to value received from "jwt" callback
         session.user = user.user;
-        session.ID = user.ID;
-
         return Promise.resolve(session);
       },
     },
   });
 
+
+
+
+//   callbacks: {
+//     jwt: async (token, user, account, profile, isNewUser) => {
+//         //  "user" parameter is the object received from "authorize"
+//         //  "token" is being send below to "session" callback...
+//         //  ...so we set "user" param of "token" to object from "authorize"...
+//         //  ...and return it...
+//         user && (token.user = user);
+//         return Promise.resolve(token)   // ...here
+//     },
+//     session: async (session, user, sessionToken) => {
+//         //  "session" is current session object
+//         //  below we set "user" param of "session" to value received from "jwt" callback
+//         session.user = user.user;
+//         return Promise.resolve(session)
+//     }
+// }
