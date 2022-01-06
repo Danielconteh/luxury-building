@@ -31,10 +31,10 @@ export default (req, res) =>
       async redirect({ url, baseUrl }) {
         return baseUrl;
       },
-      async session({ session, user, token }) {
-        // session.Id = user.ID;
-        return session;
-      },
+      // async session({ session, user, token }) {
+      //   // session.Id = user.ID;
+      //   return session;
+      // },
       // async jwt({ token, user, account, profile, isNewUser }) {
 
       //   return token;
