@@ -31,12 +31,13 @@ export default (req, res) =>
         return baseUrl;
       },
 
-      async jwt({ token, user, account, profile, isNewUser }) {
-        console.log('JWT ==================');
-        if (user) {
-          user.ID = uuidv4();
-        }
-        return token;
+      jwt: async (token, user, account, profile, isNewUser) => {
+        //  "user" parameter is the object received from "authorize"
+        //  "token" is being send below to "session" callback...
+        //  ...so we set "user" param of "token" to object from "authorize"...
+        //  ...and return it...
+        user && (token.user = user);
+        return Promise.resolve(token); // ...here
       },
 
       // async session({ session, user, token }) {
