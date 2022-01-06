@@ -37,7 +37,7 @@ export default (req, res) =>
       },
       async jwt({ token, user, account, profile, isNewUser }) {
         console.log('JWT ==================');
-        if (account) {
+        if (user) {
           user.ID = uuidv4();
         }
         return token;
