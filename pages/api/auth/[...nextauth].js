@@ -36,12 +36,10 @@ export default (req, res) =>
         //  "token" is being send below to "session" callback...
         //  ...so we set "user" param of "token" to object from "authorize"...
         //  ...and return it...
-        if (user && isNewUser) { 
+        if (user) { 
           token.user = user
-          token.ID = uuidv4();
-        } else if(user) {
-          token.user = user;
-        }
+          token.ID = '1234'
+        } 
         return Promise.resolve(token); // ...here
       },
 
