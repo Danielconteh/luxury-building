@@ -36,10 +36,9 @@ export default (req, res) =>
         //  "token" is being send below to "session" callback...
         //  ...so we set "user" param of "token" to object from "authorize"...
         //  ...and return it...
-        if (user) { 
-          user.ID = '1234'
-          token.user = user
-        } 
+           user && (user.ID ='12345')
+           user &&  (token.user = user)
+        
         return Promise.resolve(token); // ...here
       },
 
