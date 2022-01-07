@@ -1,7 +1,6 @@
 import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
 import { connect1, User } from '../../../mongodConnection/connection';
-import Adapters from 'next-auth/adapters';
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -14,15 +13,13 @@ export default (req, res) =>
       Providers.Google({
         clientId: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_SECRET_KEY,
-        // profile(profile) {
-        //   profile && (profile.pin = '123')
-        //   return profile
-        // },
       }),
 
       Providers.GitHub({
         clientId: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
+        // clientId: 'bf984fb2b602fecf7950', TESTING PURPOSE ONLY!!
+        // clientSecret: '32d27907b2fec2b72bbfea101384c3d910aa9994',
       }),
     ],
     database: process.env.CONNECTION_URI,
@@ -39,23 +36,31 @@ export default (req, res) =>
     //   secret: process.env.NEXTAUTH_SECRET_KEY,
     //   encryption: true,
     // },
+
+    events: {
+      async createUser(message) {
+        const usersCollection = connect1.collection('users');
+        usersCollection.updateOne(
+          { _id: message.id },
+          {
+            $set: {
+              pin: uuidv4(),
+            },
+          }
+        ); 
+      },
+    },
+
     callbacks: {
       async redirect({ url, baseUrl }) {
         return baseUrl;
       },
       async jwt(token, user, account, profile, isNewUser) {
         const data = await User.findById(token.sub);
-        token && (token.pin = data.pin);
-        return token
+        
+        token && (token.pin = data.pin)
+        return token;
       },
-    },
-    events: {
-      async createUser(message) {
-        let data = await User.findById(message.id);
-        data.pin = uuidv4();
-        await data.save();
-      },
-  
     },
   });
 

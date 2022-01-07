@@ -2,48 +2,50 @@ const bcrypt = require('bcrypt')
 const validator = require('validator')
 const crypto = require('crypto')
 import { Schema } from 'mongoose'
+const { v4: uuidv4 } = require('uuid');
+
 
 export const userData = new Schema({
-  name: {
-    type: String,
-    required: [true, 'fullname must not be empty'],
-    trim: true,
-  },
-
-  email: {
-    type: String,
-    required: [true, 'Enter a valid email'],
-    validate: [validator.isEmail, 'Please provide a valid email'],
-    unique: true,
-    lowercase: true,
-  },
-  image: {
-    type: String,
-  },
   pin: {
     type: String,
-    default:'danico_DB'
+    default:'12345'
   }
-//   password: {
-//     type: String,
-//     required: [true, 'Please enter your password'],
-//     minlength: [8, 'password is too short!'],
-//     select: false,
-//   },
-//   passwordConfirm: {
-//     type: String,
-//     required: [true, 'Please confirm your password'],
-//     validate: {
-//       validator: function (el) {
-//         return el === this.password
-//       },
-//       message: 'password are not the same!',
-//     },
-//   },
-//   active: {
-//     type: Boolean,
-//     default:false
-// },
+  // name: {
+  //   type: String,
+  //   // required: [true, 'fullname must not be empty'],
+  //   trim: true,
+  // },
+
+  // // email: {
+  // //   type: String,
+  // //   // required: [true, 'Enter a valid email'],
+  // //   validate: [validator.isEmail, 'Please provide a valid email'],
+  // //   // unique: true,
+  // // },
+  // image: {
+  //   type: String,
+  // },
+
+  //   password: {
+  //     type: String,
+  //     required: [true, 'Please enter your password'],
+  //     minlength: [8, 'password is too short!'],
+  //     select: false,
+  //   },
+  //   passwordConfirm: {
+  //     type: String,
+  //     required: [true, 'Please confirm your password'],
+  //     validate: {
+  //       validator: function (el) {
+  //         return el === this.password
+  //       },
+  //       message: 'password are not the same!',
+  //     },
+  //   },
+  //   active: {
+  //     type: Boolean,
+  //     default:false
+  // },
   // role: {
   //   type: String,
   //   default: 'user',
@@ -65,7 +67,7 @@ export const userData = new Schema({
   // // GOOGLE
   // provider: String,
   // googleID: Number,
-})
+});
 
 // PASSWORD MIDDLEWARE
 // userData.pre('save', async function (next) {

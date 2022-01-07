@@ -20,9 +20,9 @@ module.exports = {
     AUTH0_SECRET:
       'f5069d85d047da8a0fc460321be771927e6741a07d7970114639811053570648',
 
-    CONNECTION_URI:
-      'mongodb+srv://danico:jehovah077@cluster0.jxrgu.mongodb.net/house-shope?retryWrites=true&w=majority',
-    // CONNECTION_URI: 'mongodb://localhost:27017/house-shope',
+    // CONNECTION_URI:
+    //   'mongodb+srv://danico:jehovah077@cluster0.jxrgu.mongodb.net/house-shope?retryWrites=true&w=majority',
+    CONNECTION_URI: 'mongodb://localhost:27017/house-shope',
     NEXTAUTH_URL: 'http://localhost:3000',
     TEST: 123,
     PORT: 5000,
