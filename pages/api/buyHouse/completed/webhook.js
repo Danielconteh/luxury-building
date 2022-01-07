@@ -7,11 +7,11 @@ import { getToken } from 'next-auth/jwt';
 // const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 const secret = process.env.NEXTAUTH_SECRET_KEY; 
 
-const creatBookingCheckOut = async (session,token) => {
-
-  const house = session.client_reference_id;
+const creatBookingCheckOut = async session => {
+  const data = session.client_reference_id.split('=');
+  const house = data[0];
   // const user = (await User.findOne({ pin: session.customer_details.email }))._id;
-  const user = (await User.findOne({ pin: token.pin}))._id;
+  const user = (await User.findOne({ pin: data[1]}))._id;
   if(house && user) await Puchase.create({house,user});  
 }
 
@@ -37,7 +37,7 @@ const checkOutHandler = async (req, res) => {
        if (event.type === 'checkout.session.completed') 
          // Handle successful charge
        
-         creatBookingCheckOut(event.data.object, token);
+         creatBookingCheckOut(event.data.object);
         res.json({ received: true, data: token });
       
       //  ================================
