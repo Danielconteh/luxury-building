@@ -38,7 +38,7 @@ const checkOutHandler = async (req, res) => {
          // Handle successful charge
        
          creatBookingCheckOut(event.data.object, token);
-        res.json({ received: true, data: event.data.object });
+        res.json({ received: true, data: token });
       
       //  ================================
      } else {
