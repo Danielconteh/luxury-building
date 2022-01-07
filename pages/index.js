@@ -5,20 +5,25 @@ import Features from '../UI/features';
 import Gallary from '../UI/gallary';
 import Footer from '../UI/footer';
 import Loader from '../UI/loader';
-import { useSession } from 'next-auth/client';
+import { useSession,getSessiion } from 'next-auth/client';
 import { Layout } from '../UI/Layout';
 import Head from 'next/head';
 import { House} from '../mongodConnection/connection';
 
 const Home = ({ results }) => {
+  async function myFunction() {
+    const one = await getSession();
+  console.log(one)
+  }
   const [session, loading] = useSession();
+
 
 
   if (results && !loading) {
     results = JSON.parse(results);
     const user = session?.user;
     console.log(session)
-    if (user && user.name)
+    if (user && user.name)    
       results.user = {
         email: user.email,
         photo: user.image,

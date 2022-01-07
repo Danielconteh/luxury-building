@@ -1,9 +1,9 @@
 import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
+import { connect1, User } from '../../../mongodConnection/connection';
+import Adapters from 'next-auth/adapters';
 
 const { v4: uuidv4 } = require('uuid');
-
-
 
 
 export default (req, res) =>
@@ -14,6 +14,10 @@ export default (req, res) =>
       Providers.Google({
         clientId: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_SECRET_KEY,
+        // profile(profile) {
+        //   profile && (profile.pin = '123')
+        //   return profile
+        // },
       }),
 
       Providers.GitHub({
@@ -22,31 +26,50 @@ export default (req, res) =>
       }),
     ],
     database: process.env.CONNECTION_URI,
+
     secret: process.env.NEXTAUTH_SECRET_KEY,
-    session: {
-      // Use JSON Web Tokens for session instead of database sessions.
-      // This option can be used with or without a database for users/accounts.
-      // Note: `strategy` should be set to 'jwt' if no database is used.
-      strategy: 'jwt',
-
-      // Seconds - How long until an idle session expires and is no longer valid.
-      // maxAge: 30 * 24 * 60 * 60, // 30 days
-
-      // Seconds - Throttle how frequently to write to database to extend a session.
-      // Use it to limit write operations. Set to 0 to always update the database.
-      // Note: This option is ignored if using JSON Web Tokens
-      // updateAge: 24 * 60 * 60, // 24 hours
-    },
-
     pages: {
       signIn: '/signIn',
     },
+    session: {
+      jwt: true,
+      maxAge: 30 * 24 * 60 * 60,
+    },
+    // jwt: {
+    //   secret: process.env.NEXTAUTH_SECRET_KEY,
+    //   encryption: true,
+    // },
     callbacks: {
       async redirect({ url, baseUrl }) {
         return baseUrl;
       },
+      async jwt(token, user, account, profile, isNewUser) {
+        const data = await User.findById(token.sub);
+        token && (token.pin = data.pin);
+        // console.log(token)
+        return token
+      },
+      // session: async (session, user, sessionToken) => {
+      //   // console.log(session, user, sessionToken);
+      //   //  "session" is current session object
+      //   //  below we set "user" param of "session" to value received from "jwt" callback
+      //   console.log(session, user);
+      //   session.user = user.user;
+      //   return Promise.resolve(session);
+      // },
+    },
+    events: {
+      async createUser(message) {
+        let data = await User.findById(message.id);
 
-     
+        data.pin = uuidv4();
+        await data.save();
+      },
+      // async session(message) {
+      //   /* session is active */
+      //   let data = await User.findById(message.jwt.sub);
+      //   console.log(data)
+      // },
     },
   });
 

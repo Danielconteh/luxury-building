@@ -3,21 +3,24 @@ import { House,Puchase,User } from '../mongodConnection/connection'
 const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY)
 import { getSession } from 'next-auth/client';
 import { myOwnMadeError } from '../ErrorController/errorController';
+import { getToken } from 'next-auth/jwt';
 
+const secret = process.env.NEXTAUTH_SECRET_KEY; 
 // buy house
-export const buyHouse =  catchAsync(async (req, res, next) => {
-  const { user } = await getSession({ req });
+export const buyHouse = catchAsync(async (req, res, next) => {
+    const token = await getToken({ req, secret});
 
-  if (!user) return res.writeHead(302, {
-       Location: '/',
-  });
+
+  if (!token)return res.writeHead(302, {
+      Location: '/',
+    });
   
     // user exit
-     const check_user = await User.findOne({ email: user.email });
+     const check_user = await User.findOne({ pin: token.pin });
    
      
      const house = await House.findOne({ slug: req.query.slug })
-    if (!house) return next(myOwnMadeError(`invalid house name!`, 'danicoError'));
+    if (!house) return next(myOwnMadeError('invalid house name!', 'danicoError'));
   
 
   // return if user has already puschased this house
@@ -49,7 +52,7 @@ export const buyHouse =  catchAsync(async (req, res, next) => {
 
     success_url: 'https://luxury-building.vercel.app/store',
 
-    customer_email: user.email || 'guest@gmail.com',
+    customer_email: token.email || 'guest@gmail.com',
     client_reference_id: house.id, // needed for strpe web-hook
   });
  

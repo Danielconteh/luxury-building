@@ -1,16 +1,21 @@
 import { Puchase, User } from '../../../../mongodConnection/connection';
 const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY);
 const micro = require('micro')
+import { getToken } from 'next-auth/jwt';
 
 // const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+const secret = process.env.NEXTAUTH_SECRET_KEY; 
 
 const creatBookingCheckOut = async session => {
+
   const house = session.client_reference_id;
-  const user = (await User.findOne({ email: session.customer_details.email }))._id;
+  // const user = (await User.findOne({ pin: session.customer_details.email }))._id;
+  const user = (await User.findOne({ pin: session.pin}))._id;
   if(house && user) await Puchase.create({house,user});  
 }
 
 const checkOutHandler = async (req, res) => {
+
 
      if (req.method === 'POST') {
        const buf = await micro.buffer(req);
@@ -28,7 +33,12 @@ const checkOutHandler = async (req, res) => {
   
        if (event.type === 'checkout.session.completed') 
          // Handle successful charge
-         creatBookingCheckOut(event.data.object);
+      const token = await getToken({ req, secret});
+
+         let session = event.data.object
+          session.pin = token.pin
+       
+         creatBookingCheckOut();
         res.json({ received: true, data: event.data.object });
       
       //  ================================
