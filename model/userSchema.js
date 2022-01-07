@@ -3,7 +3,7 @@ const validator = require('validator')
 const crypto = require('crypto')
 import { Schema } from 'mongoose'
 
-const UserSchema = new Schema({
+export const userData = new Schema({
   name: {
     type: String,
     required: [true, 'fullname must not be empty'],
@@ -22,28 +22,28 @@ const UserSchema = new Schema({
   },
   pin: {
     type: String,
-    default: '1234',
-  },
-  //   password: {
-  //     type: String,
-  //     required: [true, 'Please enter your password'],
-  //     minlength: [8, 'password is too short!'],
-  //     select: false,
-  //   },
-  //   passwordConfirm: {
-  //     type: String,
-  //     required: [true, 'Please confirm your password'],
-  //     validate: {
-  //       validator: function (el) {
-  //         return el === this.password
-  //       },
-  //       message: 'password are not the same!',
-  //     },
-  //   },
-  //   active: {
-  //     type: Boolean,
-  //     default:false
-  // },
+    default:'1234'
+  }
+//   password: {
+//     type: String,
+//     required: [true, 'Please enter your password'],
+//     minlength: [8, 'password is too short!'],
+//     select: false,
+//   },
+//   passwordConfirm: {
+//     type: String,
+//     required: [true, 'Please confirm your password'],
+//     validate: {
+//       validator: function (el) {
+//         return el === this.password
+//       },
+//       message: 'password are not the same!',
+//     },
+//   },
+//   active: {
+//     type: Boolean,
+//     default:false
+// },
   // role: {
   //   type: String,
   //   default: 'user',
@@ -65,8 +65,8 @@ const UserSchema = new Schema({
   // // GOOGLE
   // provider: String,
   // googleID: Number,
-});
-export default UserSchema
+})
+
 // PASSWORD MIDDLEWARE
 // userData.pre('save', async function (next) {
 //   //if the password has not been modified (or change) return to next middle...
