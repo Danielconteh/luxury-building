@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import {signIn, signOut } from 'next-auth/client';
+import {signOut } from 'next-auth/client';
 
 import * as style from '../../styles/navbar.module.scss';
 
@@ -38,10 +38,7 @@ export const UserData = ({ fullname, email, photo }) => {
               </span>
             </div>
 
-            <div
-              onClick={async () =>
-                signOut()
-              }>
+            <div onClick={async () => signOut({ callbackUrl: '/' })}>
               <span>logout</span>
             </div>
           </div>

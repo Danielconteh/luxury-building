@@ -1,11 +1,9 @@
 import { Puchase, User } from '../../../../mongodConnection/connection';
 const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY);
 const micro = require('micro')
-import { getToken } from 'next-auth/jwt';
 
 
 // const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
-const secret = process.env.NEXTAUTH_SECRET_KEY; 
 
 const creatBookingCheckOut = async session => {
   const data = session.client_reference_id.split('=');
@@ -19,7 +17,6 @@ const checkOutHandler = async (req, res) => {
 
 
   if (req.method === 'POST') {
-      const token = await getToken({ req, secret});
        
        const buf = await micro.buffer(req);
        const sig = req.headers['stripe-signature'];
@@ -38,7 +35,7 @@ const checkOutHandler = async (req, res) => {
          // Handle successful charge
        
          creatBookingCheckOut(event.data.object);
-        res.json({ received: true, data: token });
+        res.json({ received: true});
       
       //  ================================
      } else {
