@@ -22,7 +22,7 @@ export const userData = new Schema({
   },
   pin: {
     type: String,
-    default:'1234'
+    default:'danico_DB'
   }
 //   password: {
 //     type: String,

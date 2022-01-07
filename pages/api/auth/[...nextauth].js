@@ -46,30 +46,16 @@ export default (req, res) =>
       async jwt(token, user, account, profile, isNewUser) {
         const data = await User.findById(token.sub);
         token && (token.pin = data.pin);
-        // console.log(token)
         return token
       },
-      // session: async (session, user, sessionToken) => {
-      //   // console.log(session, user, sessionToken);
-      //   //  "session" is current session object
-      //   //  below we set "user" param of "session" to value received from "jwt" callback
-      //   console.log(session, user);
-      //   session.user = user.user;
-      //   return Promise.resolve(session);
-      // },
     },
     events: {
       async createUser(message) {
         let data = await User.findById(message.id);
-
         data.pin = uuidv4();
         await data.save();
       },
-      // async session(message) {
-      //   /* session is active */
-      //   let data = await User.findById(message.jwt.sub);
-      //   console.log(data)
-      // },
+  
     },
   });
 

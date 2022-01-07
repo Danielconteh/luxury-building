@@ -1,7 +1,6 @@
 import catchAsync from '../ErrorController/catchAsync'
 import { House,Puchase,User } from '../mongodConnection/connection'
 const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY)
-import { getSession } from 'next-auth/client';
 import { myOwnMadeError } from '../ErrorController/errorController';
 import { getToken } from 'next-auth/jwt';
 
