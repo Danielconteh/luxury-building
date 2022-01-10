@@ -2,7 +2,7 @@ import React,{useRef} from 'react';
 import { providers, signIn, getSession, csrfToken } from 'next-auth/client';
 import Footer from '../../UI/footer';
 import NavBar from '../../UI/navBar';
-import * as Style from '../styles/signIn.module.scss';
+import * as Style from '../../styles/signIn.module.scss';
 
 export default function SignIn({ providers, csrfToken }) {
 
