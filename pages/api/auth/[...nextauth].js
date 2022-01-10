@@ -26,7 +26,7 @@ export default (req, res) =>
 
     secret: process.env.NEXTAUTH_SECRET_KEY,
     pages: {
-      signIn: '/signIn',
+      signIn: '/auth/signIn',
     },
     session: {
       jwt: true,

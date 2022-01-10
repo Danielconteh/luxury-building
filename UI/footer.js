@@ -10,7 +10,7 @@ const Footer = () => {
         <a>build your future</a>
         <a>come work with us!</a>
       </div>
-      <div>&copy; Copyright 2020 by Daniel Conteh</div>
+      <div>&copy; Copyright {new Date().getFullYear()} by Daniel Conteh</div>
     </div>
   )
 }

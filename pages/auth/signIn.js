@@ -1,7 +1,7 @@
 import React,{useRef} from 'react';
 import { providers, signIn, getSession, csrfToken } from 'next-auth/client';
-import Footer from '../UI/footer';
-import NavBar from '../UI/navBar';
+import Footer from '../../UI/footer';
+import NavBar from '../../UI/navBar';
 import * as Style from '../styles/signIn.module.scss';
 
 export default function SignIn({ providers, csrfToken }) {
@@ -24,7 +24,11 @@ export default function SignIn({ providers, csrfToken }) {
                 <button
                   className={Style.name}
                   key={provider.name}
-                  onClick={() => signIn(provider.id)}>
+                  onClick={() =>
+                    signIn(provider.id, {
+                      callbackUrl: '/',
+                    })
+                  }>
                   sign in with {provider.name}{' '}
                 </button>
               );
