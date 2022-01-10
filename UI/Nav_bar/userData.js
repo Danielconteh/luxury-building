@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import {signOut } from 'next-auth/client';
-import Avatar from '@mui/material/Avatar';
 
 import * as style from '../../styles/navbar.module.scss';
 
@@ -13,7 +12,6 @@ export const UserData = ({ fullname, email, photo }) => {
     <>
       {fullname ? (
         <div className={style.user}>
-          <Avatar>
             <div className={style.user_img}>
               <Image
                 src={
@@ -30,7 +28,6 @@ export const UserData = ({ fullname, email, photo }) => {
                 // layout='intrinsic'
               />
             </div>
-          </Avatar>
           <span className={style.user_name}>{fullname.split(' ')[0]}</span>
 
           {/* account & logout show only on hover*/}
