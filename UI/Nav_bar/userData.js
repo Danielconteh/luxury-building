@@ -4,7 +4,7 @@ import {signOut } from 'next-auth/client';
 
 import * as style from '../../styles/navbar.module.scss';
 
-export const UserData = ({ fullname, email, photo }) => {
+export const UserData = ({ fullname, photo }) => {
   const router = useRouter();
 
   // if there is no photo [use the default]

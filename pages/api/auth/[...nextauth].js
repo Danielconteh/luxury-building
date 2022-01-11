@@ -30,16 +30,16 @@ export default (req, res) =>
     },
     session: {
       jwt: true,
+    },
+    jwt: {
+      secret: process.env.NEXTAUTH_SECRET_KEY,
       maxAge: 30 * 24 * 60 * 60,
     },
-    // jwt: {
-    //   secret: process.env.NEXTAUTH_SECRET_KEY,
-    //   encryption: true,
-    // },
 
     events: {
       async createUser(message) {
         const usersCollection = connect1.collection('users');
+
         usersCollection.updateOne(
           { _id: message.id },
           {
@@ -48,6 +48,8 @@ export default (req, res) =>
             },
           }
         ); 
+
+        connect1.dropCollection('accounts');
       },
     },
 
