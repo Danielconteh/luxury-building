@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import {signOut } from 'next-auth/client';
+import { signOut } from 'next-auth/client';
+
 
 import * as style from '../../styles/navbar.module.scss';
 
-export const UserData = ({ fullname, photo }) => {
+export const UserData = ({ fullname,  photo }) => {
   const router = useRouter();
 
   // if there is no photo [use the default]
@@ -27,20 +28,14 @@ export const UserData = ({ fullname, photo }) => {
               objectFit="cover"
               // layout='intrinsic'
             />
-            </div>
+          </div>
           <span className={style.user_name}>{fullname.split(' ')[0]}</span>
 
           {/* account & logout show only on hover*/}
-          <div className={style.user_accout_logout}>
-            <div>
-              <span onClick={async () => await router.push('/store')}>
-                Store
-              </span>
-            </div>
 
-            <div onClick={async () => signOut({ callbackUrl: '/' })}>
-              <span>logout</span>
-            </div>
+          <div className={style.user_accout_logout}>
+            <a onClick={() => router.push('/store')}>store</a>
+            <a onClick={() => signOut({ callbackUrl: '/' })}>logout</a>
           </div>
         </div>
       ) : (

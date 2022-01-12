@@ -4,7 +4,7 @@ const stripe = require('stripe')(process.env.STRIP_SERVER_SIDE_KEY)
 import { myOwnMadeError } from '../ErrorController/errorController';
 import { getToken } from 'next-auth/jwt';
 
-const secret = process.env.NEXTAUTH_SECRET_KEY; 
+const secret = process.env.NEXTAUTH_JWT_KEY; 
 // buy house
 export const buyHouse = catchAsync(async (req, res, next) => {
     const token = await getToken({ req, secret});

@@ -28,28 +28,28 @@ export default (req, res) =>
     pages: {
       signIn: '/auth/signIn',
     },
+    jwt: {
+      secret: process.env.NEXTAUTH_JWT_KEY,
+    },
     session: {
       jwt: true,
-    },
-    jwt: {
-      secret: process.env.NEXTAUTH_SECRET_KEY,
-      maxAge: 30 * 24 * 60 * 60,
+      maxAge: 30 * 24 * 60 * 1000,
+      updateAge: 30 * 24 * 60 * 1000,
     },
 
     events: {
       async createUser(message) {
         const usersCollection = connect1.collection('users');
-
         usersCollection.updateOne(
           { _id: message.id },
           {
             $set: {
-              pin: uuidv4(),
+              pin: `${
+                uuidv4() + Date.now() + Math.random() * Date.now()
+              }`,
             },
           }
-        ); 
-
-        connect1.dropCollection('accounts');
+        );
       },
     },
 
@@ -57,31 +57,27 @@ export default (req, res) =>
       async redirect({ url, baseUrl }) {
         return baseUrl;
       },
-      async jwt(token, user, account, profile, isNewUser) {
+      async signIn(user, account) {
+        return { user, account };
+      },
+      async jwt(token, user, account) {
         const data = await User.findById(token.sub);
-        
-        token && (token.pin = data.pin)
+
+        token && (token.pin = data.pin);
+
+        // [very uses!] Persist the OAuth access_token to the token right after signin
+        if (account) {
+          token.accessToken = account.access_token;
+          console.log(token.accessToken);
+        }
         return token;
+      },
+      async session(session, token, user) {
+        // Send properties to the client, like an access_token from a provider.
+        // console.log(session, token, user);
+        session.accessToken = token.accessToken;
+        return session;
       },
     },
   });
 
-
-
-
-//   callbacks: {
-//     jwt: async (token, user, account, profile, isNewUser) => {
-//         //  "user" parameter is the object received from "authorize"
-//         //  "token" is being send below to "session" callback...
-//         //  ...so we set "user" param of "token" to object from "authorize"...
-//         //  ...and return it...
-//         user && (token.user = user);
-//         return Promise.resolve(token)   // ...here
-//     },
-//     session: async (session, user, sessionToken) => {
-//         //  "session" is current session object
-//         //  below we set "user" param of "session" to value received from "jwt" callback
-//         session.user = user.user;
-//         return Promise.resolve(session)
-//     }
-// }

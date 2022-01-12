@@ -18,13 +18,14 @@
     color: inherit;
     cursor: pointer;
   }
-
-  .log {
-    @media screen and (max-width: 40.625em) {
-      //650px
-      display: none;
-    }
-  }
+.logo_icon{
+  font-size: 2rem;
+  color:#fff;
+  @media screen and (max-width: 40.625em) {//650px
+  display: none;
+}
+}
+ 
   .signInForm {
     cursor: pointer;
     padding: 0.5rem 1rem;
@@ -305,6 +306,16 @@
     visibility: visible;
     opacity: 1;
   }
+   &:focus &_accout_logout {
+    background-color: none;
+    visibility: visible;
+    opacity: 1;
+  }
+   &:active &_accout_logout {
+    background-color: none;
+    visibility: visible;
+    opacity: 1;
+  }
 
   &_accout_logout {
     position: absolute;
@@ -339,7 +350,12 @@
           &:hover {
             background-color: darken($mainBgColor, 6.95rem);
           }
-          
+          &:focus {
+            background-color: none;
+          }
+           &:active {
+            background-color: none;
+          }
         }
       }
     }

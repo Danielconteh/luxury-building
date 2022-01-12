@@ -90,6 +90,7 @@
 
 
   &_item {
+    padding-top: 2.5rem;
     display: grid;
     justify-content: space-around;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -115,8 +116,19 @@
       }
     }
   }
+  .Copyright{
+    padding-bottom: 2rem
+  }
 
   @extend .full-bledge-section;
-  padding: 5rem 4rem;
+  padding: 2rem 2.5rem;
   margin-bottom: 0rem;
+}
+
+// LOGO ON THE FOOTER
+.logo_icon{
+  display: none;
+   @media screen and (max-width: 40.625em) {//650px
+      display: block;
+    }
 }

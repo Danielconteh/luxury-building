@@ -1,6 +1,5 @@
 import {useReducer} from 'react'
 import Image from 'next/image'
-// import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import * as Style from '../styles/houses.module.scss'

@@ -76,23 +76,3 @@ body {
 
 
 
-// NOT FOUND PAGE
-
-.not-found {
-  text-align: center;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  h1{
-    font-size: 1.75rem;
-    letter-spacing: .15rem;
-  }
-  h2{
-    font-size: 1.55rem;
-    letter-spacing: .15rem; 
-  }
-  a{
-    color: #4979ff;
-    text-decoration: underline;
-  }
-}

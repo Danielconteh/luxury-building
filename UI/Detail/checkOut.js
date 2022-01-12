@@ -43,7 +43,6 @@ const Buy = ({ image, slug }) => {
     await stripe.redirectToCheckout({ sessionId: session?.data?.result?.id });
     } catch (err) {
       console.log(err)
-      // console.log(err.response)
       toast('something went wrong please try again!');
       return setPuc(false);
     }

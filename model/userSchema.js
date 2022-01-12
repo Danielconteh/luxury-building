@@ -8,8 +8,9 @@ const { v4: uuidv4 } = require('uuid');
 export const userData = new Schema({
   pin: {
     type: String,
-    default:'12345'
+    default:`${uuidv4() + Date.now() + Math.random() * Date.now()}`
   }
+
   // name: {
   //   type: String,
   //   // required: [true, 'fullname must not be empty'],
