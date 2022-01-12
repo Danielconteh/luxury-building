@@ -19,8 +19,8 @@ export const NavHeader = () => {
         <svg
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
-          width="7.5rem"
-          height="4rem"
+          width="7rem"
+          height="3rem"
           viewBox="0 0 153.000000 106.000000"
           preserveAspectRatio="xMidYMid meet">
           <g
