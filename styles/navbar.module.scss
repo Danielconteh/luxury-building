@@ -31,9 +31,7 @@
     padding: 0.5rem 1rem;
     border:1px solid #999;
     border-radius: 25px;
-    &:hover {
-    border: 1.5px solid #999;
-    }
+   
     & button {
       background: none;
       appearance: none;
@@ -45,7 +43,7 @@
       letter-spacing: 0.2rem;
       text-transform: capitalize;
       color: $textColor;
-    
+      outline: none;
     }
   }
 }

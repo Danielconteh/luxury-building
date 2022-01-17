@@ -58,6 +58,8 @@
       appearance: none;      
       transition: all 0.2s ease-in-out;
       color: #555;
+      outline: none;
+
 
       &:hover,&:focus{transform: translateY(-1px);}
       &:active {transform: translateY(0px);}

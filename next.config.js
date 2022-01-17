@@ -9,6 +9,6 @@ module.exports = {
       's.gravatar.com',
       'avatars.githubusercontent.com',
     ],
-  },
+  }
 };
 

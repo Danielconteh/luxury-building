@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/client';
 import { useState } from 'react'
 import Script from 'next/script';
 import { useRouter } from 'next/router';
+import Avatar from '@mui/material/Avatar';
 
 
 import * as Style from '../../styles/detail/checkOut.module.scss'
@@ -61,39 +62,37 @@ const Buy = ({ image, slug }) => {
         <div className={Style.grid_checkOut_container__item}>
           <div className={Style.grid_checkOut_container__item_img}>
             {image && (
-              <Image
-                alt="house image"
-                src={image}
-                width={1000}
-                height={667}
-                objectFit="cover"
+                <Image
+                  alt="house image"
+                  src={image}
+                  width={1000}
+                  height={667}
+                  objectFit="cover"
                 quality={100}
-              />
+                
+                />
             )}
           </div>
 
           <div className={Style.grid_checkOut_container__item_text}>
             <div> What are you waiting for?</div>
-            <div>
-              enjoy all the luxury and comfort you need!
-            </div>
+            <div>enjoy all the luxury and comfort you need!</div>
           </div>
           {session && session.user ? (
             <div className={Style.grid_checkOut_container__item_btn}>
-             
               <LoadingButton
                 onClick={async () => await buyHouse(slug)}
                 loading={puc ? true : false}
                 loadingPosition="end"
                 endIcon={<SendIcon />}
                 variant="outlined">
-                  puchase
+                puchase
               </LoadingButton>
             </div>
           ) : (
             <div className={Style.grid_checkOut_container__item_btn}>
               <Button
-                onClick={async () => await router.push('/signIn')}
+                onClick={async () => await router.push('/auth/signIn')}
                 variant="outlined">
                 signIn
               </Button>{' '}

@@ -21,6 +21,7 @@
     letter-spacing: .165rem;
     margin: 2rem 0rem;
     margin-top: 0rem;
+    font-family: Merriweather;
   }
 
   &__item {
@@ -53,6 +54,7 @@
       letter-spacing: 0.13rem;
       align-self: center;
       text-align: center;
+      font-family: Roborto;
       @media screen and (max-width: 43.75em) {
         //650px
         grid-column: 1 / -1;
@@ -80,7 +82,8 @@
 
       }
 
-      button {        
+      button {  
+        outline: none;
         letter-spacing: 0.13rem;
         text-transform: capitalize;
         font-size: 1.6rem;
